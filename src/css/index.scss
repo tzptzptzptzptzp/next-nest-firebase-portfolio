@@ -1,0 +1,27 @@
+@use "./base/index";
+@use "./base/variables" as *;
+@use "./base/mixin" as *;
+
+/*---------- TAILWIND ----------*/
+@tailwind utilities;
+
+/*---------- USER ----------*/
+.centering {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centering-x {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.centering-y {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// SP
+@media (max-width: #{$BREAK-POINT + px}) {
+}
