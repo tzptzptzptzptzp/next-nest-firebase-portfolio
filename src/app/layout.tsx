@@ -1,4 +1,4 @@
-import './globals.css'
+import '../css/index.scss'
 import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
 

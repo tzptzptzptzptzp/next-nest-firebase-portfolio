@@ -1,0 +1,35 @@
+@use 'sass:math';
+@use 'variables' as *;
+
+@mixin area-base {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+@mixin default-screen {
+  width: 100%;
+  max-width: max(
+    #{$default-width + px},
+    #{math.div($default-width, $PC) * 100 + vw}
+  );
+}
+
+@mixin wide-screen {
+  width: 100%;
+  max-width: max(#{$wide-width + px}, #{math.div($wide-width, $PC) * 100 + vw});
+}
+
+@mixin fullwide-screen {
+  width: 100%;
+  max-width: 100%;
+}
+
+@mixin narrow-screen {
+  width: 100%;
+  max-width: max(
+    #{$narrow-width + px},
+    #{math.div($narrow-width, $PC) * 100 + vw}
+  );
+}
