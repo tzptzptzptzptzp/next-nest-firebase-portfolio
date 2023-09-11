@@ -1,7 +1,11 @@
+import { Profile } from '@/components/Profile'
+
 export default function Home() {
   return (
-    <main className="flex items-center justify-center w-full min-h-screen p-24">
-      <h1>Next.js</h1>
+    <main className="flex-center relative centering-x w-screen h-screen p-28">
+      <div className="w-full max-w-screen-xl h-full overflow-y-scroll">
+        <Profile />
+      </div>
     </main>
   )
 }
