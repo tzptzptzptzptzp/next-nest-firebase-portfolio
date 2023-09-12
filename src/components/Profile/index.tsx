@@ -1,7 +1,8 @@
-import { UserBirth } from "./UserBirth"
 import { UserIcon } from "./UserIcon"
-import { UserJob } from "./UserJob"
 import { UserName } from "./UserName"
+import { UserJob } from "./UserJob"
+import { UserBirth } from "./UserBirth"
+import { UserEngineering } from "./UserEngineering"
 
 export const Profile = () => {
   return (
@@ -10,8 +11,9 @@ export const Profile = () => {
         <UserIcon />
         <UserName />
         <UserJob />
-        <div className="flex">
+        <div className="flex-center gap-8">
           <UserBirth />
+          <UserEngineering />
         </div>
       </div>
     </>
