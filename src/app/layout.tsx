@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={`${fontMain.className} overflow-hidden`}>{children}</body>
+      <body className={`${fontMain.className} overflow-hidden bg-bg_light dark:bg-bg_dark text-text_light dark:text-text_dark`}>{children}</body>
     </html>
   )
 }
