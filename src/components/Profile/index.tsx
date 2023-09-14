@@ -3,6 +3,7 @@ import { UserName } from "./UserName"
 import { UserJob } from "./UserJob"
 import { UserBirth } from "./UserBirth"
 import { UserEngineering } from "./UserEngineering"
+import { SnsLinks } from "../SnsLinks"
 
 export const Profile = () => {
   return (
@@ -15,6 +16,7 @@ export const Profile = () => {
           <UserBirth />
           <UserEngineering />
         </div>
+        <SnsLinks />
       </div>
     </>
   )
