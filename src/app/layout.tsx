@@ -1,8 +1,8 @@
 import '../css/index.scss'
 import type { Metadata } from 'next'
-import { Noto_Sans_JP } from 'next/font/google'
+import { Zen_Maru_Gothic } from 'next/font/google'
 
-const notoSansJp = Noto_Sans_JP({ subsets: ['latin'] })
+const fontMain = Zen_Maru_Gothic({ weight: ['500', '700'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={notoSansJp.className}>{children}</body>
+      <body className={fontMain.className}>{children}</body>
     </html>
   )
 }
