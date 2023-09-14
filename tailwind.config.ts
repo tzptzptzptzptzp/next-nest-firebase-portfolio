@@ -19,7 +19,7 @@ const config: Config = {
         bg_light: "#FFF",
         bg_dark: "#222",
         text_light: "#393939",
-        text_dark: "#EEE",
+        text_dark: "#DDD",
       },
     },
   },
