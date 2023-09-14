@@ -18,7 +18,7 @@ const config: Config = {
         main: "#FDE68A",
         bg_light: "#FFF",
         bg_dark: "#222",
-        text_light: "#222",
+        text_light: "#393939",
         text_dark: "#EEE",
       },
     },
