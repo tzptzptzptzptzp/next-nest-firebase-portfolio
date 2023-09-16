@@ -5,9 +5,9 @@ export const GitHubStatus = () => {
   const username = 'tzptzptzptzptzp'
   return (
     <>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col relative z-0">
         <ContentTitle icon={faGithubAlt} title={'GitHub Status'} />
-        <div className="flex justify-between gap-8">
+        <div className="flex justify-between gap-8 -z-10">
           <div className="w-2/5">
             {/* eslint-disable-next-line */}
             <img src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&show_icons=true&hide_title=true&hide_border=true&hide=scss,css,html`} className="w-full" style={{ transform: 'scale(1.1)' }} alt="Top Languages Card" />
