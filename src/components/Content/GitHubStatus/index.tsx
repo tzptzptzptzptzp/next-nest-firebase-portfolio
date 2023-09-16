@@ -1,8 +1,12 @@
+import { ContentTitle } from "../Title"
+import { faGithubAlt } from "@fortawesome/free-brands-svg-icons"
+
 export const GitHubStatus = () => {
   const username = 'tzptzptzptzptzp'
   return (
     <>
       <div className="flex flex-col gap-8">
+        <ContentTitle icon={faGithubAlt} title={'GitHub Status'} />
         <div className="flex justify-between gap-8">
           <div className="w-2/5">
             {/* eslint-disable-next-line */}
