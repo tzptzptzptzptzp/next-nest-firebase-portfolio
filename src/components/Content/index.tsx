@@ -1,5 +1,6 @@
 import { GitHubStatus } from "./GitHubStatus"
 import { Favorite } from "./Favorite"
+import { Enhancing } from "./Enhancing"
 
 export const Content = () => {
   return (
@@ -9,6 +10,7 @@ export const Content = () => {
           <div className='flex flex-col gap-16 p-16 bg-bg_light dark:bg-bg_dark'>
             <GitHubStatus />
             <Favorite />
+            <Enhancing />
           </div>
         </div>
       </div>
