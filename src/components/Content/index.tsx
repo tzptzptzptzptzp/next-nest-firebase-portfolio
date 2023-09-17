@@ -1,6 +1,7 @@
 import { GitHubStatus } from "./GitHubStatus"
 import { Favorite } from "./Favorite"
 import { Enhancing } from "./Enhancing"
+import { Career } from "./Career"
 
 export const Content = () => {
   return (
@@ -11,6 +12,7 @@ export const Content = () => {
             <GitHubStatus />
             <Favorite />
             <Enhancing />
+            <Career />
           </div>
         </div>
       </div>
