@@ -2,6 +2,7 @@ import { AboutMe } from "./AboutMe"
 import { GitHubStatus } from "./GitHubStatus"
 import { Favorite } from "./Favorite"
 import { Enhancing } from "./Enhancing"
+import { Skill } from "./Skill"
 import { Career } from "./Career"
 import { Experience } from "./Experience"
 
@@ -15,6 +16,7 @@ export const Content = () => {
             <GitHubStatus />
             <Favorite />
             <Enhancing />
+            <Skill />
             <Career />
             <Experience />
           </div>
