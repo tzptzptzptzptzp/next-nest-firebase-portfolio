@@ -5,6 +5,7 @@ import { Enhancing } from "./Enhancing"
 import { Skill } from "./Skill"
 import { Career } from "./Career"
 import { Experience } from "./Experience"
+import { Project } from "./Project"
 
 export const Content = () => {
   return (
@@ -17,6 +18,7 @@ export const Content = () => {
             <Favorite />
             <Enhancing />
             <Skill />
+            <Project />
             <Career />
             <Experience />
           </div>
