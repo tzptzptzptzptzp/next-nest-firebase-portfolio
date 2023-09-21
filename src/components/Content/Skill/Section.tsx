@@ -1,5 +1,5 @@
 import { SkillType } from "@/types/SkillType"
-import { SkillBox } from "./box"
+import { SkillBox } from "./Box"
 
 type SkillSet = {
   sectionTitle: string,
