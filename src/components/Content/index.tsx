@@ -6,6 +6,7 @@ import { Skill } from "./Skill"
 import { Career } from "./Career"
 import { Experience } from "./Experience"
 import { Project } from "./Project"
+import { Portfolio } from "./Portfolio"
 
 export const Content = () => {
   return (
@@ -19,6 +20,7 @@ export const Content = () => {
             <Enhancing />
             <Skill />
             <Project />
+            <Portfolio />
             <Career />
             <Experience />
           </div>
