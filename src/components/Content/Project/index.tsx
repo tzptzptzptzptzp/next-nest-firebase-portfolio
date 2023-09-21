@@ -12,35 +12,41 @@ const projectData = [
       'Laravel',
       'WordPress',
       'EC2'
-    ]
+    ],
+    completion_date: '2023-09'
   },
   {
     titleJa: 'Financial media function improvements',
     titleEn: 'Financial media function improvements',
     descriptionJa: 'Financial media function improvements. Financial media function improvements',
-    descriptionEn: 'Financial media function improvements. Financial media function improvements',
+    descriptionEn: 'Financial media function improvements.',
     technology: [
-      'React',
-      'Next.js',
-      'Firebase'
-    ]
+      'Vue',
+      'Nest.js',
+      'Supabase'
+    ],
+    completion_date: '2023-07'
   },
   {
     titleJa: 'Financial media function improvements',
     titleEn: 'Financial media function improvements',
-    descriptionJa: 'Financial media function improvements',
-    descriptionEn: 'Financial media function improvements',
+    descriptionJa: 'Financial media function improvements.',
+    descriptionEn: 'Financial media function improvements. Financial media function improvements.',
     technology: [
       'React',
       'Next.js',
       'Firebase'
-    ]
+    ],
+    completion_date: '2023-08'
   },
 ]
 
 export const Project = () => {
-  const oddIndexProjects = projectData.filter((_, index) => index % 2 !== 1);
-  const evenIndexProjects = projectData.filter((_, index) => index % 2 !== 0);
+  const ascOrderData = projectData.slice().sort((a, b) => new Date(a.completion_date).getTime() - new Date(b.completion_date).getTime())
+
+  const oddIndexProjects = ascOrderData.filter((_, index) => index % 2 !== 1);
+
+  const evenIndexProjects = ascOrderData.filter((_, index) => index % 2 !== 0);
   return (
     <>
       <div className="flex flex-col gap-10">
