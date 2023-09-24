@@ -17,7 +17,7 @@ export const SkillBox = ({ skill }: Props) => {
   ));
   return (
     <>
-      <div className="flex items-center justify-between gap-4 relative z-0 p-4 bg-bg_light dark:bg-bg_dark border rounded-lg">
+      <div className="flex items-center justify-between gap-4 relative z-0 p-4 color-bg border rounded-lg">
         <div className="flex flex-col gap-1">
           <h3 className="text-[2rem] font-bold">{skill.name}</h3>
           <div className="h-8 text-amber-500">

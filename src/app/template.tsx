@@ -43,7 +43,7 @@ export default function Template({
   return (
     <>
       <html lang="ja" data-theme={isTheme ? isTheme : null}>
-        <body className={`${fontMain.className} overflow-hidden bg-bg_light dark:bg-bg_dark text-text_light dark:text-text_dark`}>{children}</body>
+        <body className={`${fontMain.className} overflow-hidden color-main color-text`}>{children}</body>
       </html>
     </>
   );

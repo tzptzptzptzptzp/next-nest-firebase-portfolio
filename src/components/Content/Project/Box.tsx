@@ -9,7 +9,7 @@ type Props = {
 export const ProjectBox = ({ data }: Props) => {
   return (
     <>
-      <div className="flex flex-col gap-4 relative z-0 px-8 pt-4 pb-6 bg-bg_light dark:bg-bg_dark border rounded-lg">
+      <div className="flex flex-col gap-4 relative z-0 px-8 pt-4 pb-6 color-bg border rounded-lg">
         <div>
           <h3 className="text-[2.2rem] font-bold leading-tight">{data.titleEn}</h3>
         </div>
