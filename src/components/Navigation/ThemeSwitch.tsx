@@ -13,8 +13,10 @@ export const ThemeSwitch = () => {
   const handleClick = (currentTheme: string) => {
     if (currentTheme === 'light') {
       dispatch(toggleTheme('dark'))
+      localStorage.setItem('theme', 'dark')
     } else if (currentTheme === 'dark') {
       dispatch(toggleTheme('light'))
+      localStorage.setItem('theme', 'light')
     }
   }
   return (
