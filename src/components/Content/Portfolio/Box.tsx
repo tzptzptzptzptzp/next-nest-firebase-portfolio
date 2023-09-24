@@ -12,7 +12,7 @@ type Props = {
 export const PortfolioBox = ({ data, i, length }: Props) => {
   return (
     <>
-      <a href={data.link} className="flex flex-col gap-4 relative z-0 px-8 pt-4 pb-6 bg-bg_light dark:bg-bg_dark border rounded-lg" target="_blank" rel="noopener noreferrer">
+      <a href={data.link} className="flex flex-col gap-4 relative z-0 px-8 pt-4 pb-6 color-bg border rounded-lg" target="_blank" rel="noopener noreferrer">
         <div className="flex items-center gap-2">
           <div style={{ transform: 'translateY(.15rem)' }}>
             <Icon icon={faWindowMaximize} />

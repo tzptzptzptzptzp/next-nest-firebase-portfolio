@@ -33,18 +33,18 @@ export const CareerBox = ({ data, i, length }: Props) => {
         </p>
       </div>
       {i != length - 1 ? (
-        <div className="absolute -bottom-8 left-1/2 -z-10 w-[2px] h-8 bg-text_light dark:bg-text_dark opacity-50"></div>
+        <div className="absolute -bottom-8 left-1/2 -z-10 w-[2px] h-8 color-border opacity-50"></div>
       ) : ''}
     </>
   )
   return (
     <>
       {data.link != '' ? (
-        <a href={data.link} className="flex flex-col gap-2 relative z-0 px-8 pt-4 pb-6 bg-bg_light dark:bg-bg_dark border rounded-lg" target="_blank" rel="noopener noreferrer">
+        <a href={data.link} className="flex flex-col gap-2 relative z-0 px-8 pt-4 pb-6 color-bg border rounded-lg" target="_blank" rel="noopener noreferrer">
           {content}
         </a>
       ) : (
-        <div className="flex flex-col gap-2 relative z-0 px-8 pt-4 pb-6 bg-bg_light dark:bg-bg_dark border rounded-lg">
+        <div className="flex flex-col gap-2 relative z-0 px-8 pt-4 pb-6 color-bg border rounded-lg">
           {content}
         </div>
       )}

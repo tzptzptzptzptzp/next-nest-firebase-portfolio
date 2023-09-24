@@ -5,6 +5,40 @@
 /*---------- TAILWIND ----------*/
 @tailwind utilities;
 
+/*---------- THEME ----------*/
+:root {
+  --color-main: #fde68a;
+  --color-text: #393939;
+  --color-bg: #fff;
+}
+
+[data-theme="dark"] {
+  --color-main: #222;
+  --color-text: #ddd;
+  --color-bg: #222;
+}
+
+.color-main {
+  background-color: var(--color-main);
+  transition: 0.3s;
+}
+
+.color-text {
+  color: var(--color-text);
+  transition: 0.3s;
+}
+
+.color-bg {
+  background-color: var(--color-bg);
+  transition: 0.3s;
+}
+
+.color-border {
+  border-color: var(--color-text);
+  background-color: var(--color-text);
+  transition: 0.3s;
+}
+
 /*---------- USER ----------*/
 .centering {
   top: 50%;

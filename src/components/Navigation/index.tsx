@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Icon } from "../Icon"
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons"
 import { faLanguage, faRightToBracket, faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons"
-import { MoonIcon } from "../Icon/Moon"
+import { ThemeSwitch } from "./ThemeSwitch"
 
 export const Navigation = () => {
   return (
@@ -20,9 +20,7 @@ export const Navigation = () => {
             </Link>
           </li>
           <li>
-            <button className="w-[4.5rem] h-[4.5rem]">
-              <MoonIcon />
-            </button>
+            <ThemeSwitch />
           </li>
           <li>
             <button className="text-[4.5rem]">
