@@ -3,9 +3,8 @@
 import { useEffect } from 'react'
 import { Zen_Maru_Gothic } from 'next/font/google'
 
-import { useDispatch, useSelector } from 'react-redux'
+import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { toggleTheme } from '@/redux/themeSlice'
-import { RootState } from '@/redux/store'
 
 const fontMain = Zen_Maru_Gothic({ weight: ['500', '700'], subsets: ['latin'] })
 
@@ -14,8 +13,8 @@ export default function Template({
 }: {
   children: React.ReactNode
 }) {
-  const isTheme = useSelector((state: RootState) => state.theme.value)
-  const dispatch = useDispatch()
+  const isTheme = useAppSelector((state) => state.theme.value)
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
     const setInitialColorMode = () => {
