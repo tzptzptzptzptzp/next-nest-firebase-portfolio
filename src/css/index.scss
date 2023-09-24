@@ -30,6 +30,11 @@
   background-color: var(--color-bg);
 }
 
+.color-border {
+  border-color: var(--color-text);
+  background-color: var(--color-text);
+}
+
 /*---------- USER ----------*/
 .centering {
   top: 50%;
