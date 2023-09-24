@@ -5,6 +5,32 @@
 /*---------- TAILWIND ----------*/
 @tailwind utilities;
 
+/*---------- THEME ----------*/
+:root {
+  --color-main: "#FDE68A",
+  --color-text: "#393939",
+  --color-bg: "#FFF",
+}
+
+[data-theme="dark"] {
+  --color-main: "#222",
+  --color-text: "#DDD",
+  --color-bg: "#222",
+  
+}
+
+.color-main {
+  background-color: var(--color-main);
+}
+
+.color-text {
+  color: var(--color-text);
+}
+
+.color-bg {
+  background-color: var(--color-bg);
+}
+
 /*---------- USER ----------*/
 .centering {
   top: 50%;
