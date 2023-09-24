@@ -7,16 +7,15 @@
 
 /*---------- THEME ----------*/
 :root {
-  --color-main: "#FDE68A",
-  --color-text: "#393939",
-  --color-bg: "#FFF",
+  --color-main: #fde68a;
+  --color-text: #393939;
+  --color-bg: #fff;
 }
 
 [data-theme="dark"] {
-  --color-main: "#222",
-  --color-text: "#DDD",
-  --color-bg: "#222",
-  
+  --color-main: #222;
+  --color-text: #ddd;
+  --color-bg: #222;
 }
 
 .color-main {
