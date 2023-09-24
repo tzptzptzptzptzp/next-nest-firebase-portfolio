@@ -14,6 +14,7 @@ export default function Template({
 }: {
   children: React.ReactNode
 }) {
+  const isTheme = useSelector((state: RootState) => state.theme.value)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -42,7 +43,7 @@ export default function Template({
   }, [])
   return (
     <>
-      <html lang="ja">
+      <html lang="ja" data-theme={isTheme ? isTheme : null}>
         <body className={`${fontMain.className} overflow-hidden bg-bg_light dark:bg-bg_dark text-text_light dark:text-text_dark`}>{children}</body>
       </html>
     </>
