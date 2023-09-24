@@ -11,9 +11,9 @@ import { Experience } from "./Experience"
 export const Content = () => {
   return (
     <>
-      <div className='relative top-0 right-0 w-3/4 h-full py-24 pr-48 bg-main dark:bg-bg_dark'>
+      <div className='relative top-0 right-0 w-3/4 h-full py-24 pr-48 '>
         <div className='overflow-y-scroll h-full'>
-          <div className='flex flex-col gap-16 p-16 bg-bg_light dark:bg-bg_dark'>
+          <div className='flex flex-col gap-16 p-16 color-bg'>
             <AboutMe />
             <GitHubStatus />
             <Favorite />
