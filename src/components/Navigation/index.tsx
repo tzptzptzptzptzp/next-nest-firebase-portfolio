@@ -1,8 +1,9 @@
 import Link from "next/link"
 import { Icon } from "../Icon"
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons"
-import { faLanguage, faRightToBracket, faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons"
+import { faRightToBracket, faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons"
 import { ThemeSwitch } from "./ThemeSwitch"
+import { LangSwitch } from "./LangSwitch"
 
 export const Navigation = () => {
   return (
@@ -23,9 +24,7 @@ export const Navigation = () => {
             <ThemeSwitch />
           </li>
           <li>
-            <button className="text-[4.5rem]">
-              <Icon icon={faLanguage} />
-            </button>
+            <LangSwitch />
           </li>
           <li>
             <button className="text-[4.5rem]">

@@ -10,12 +10,14 @@
   --color-main: #fde68a;
   --color-text: #393939;
   --color-bg: #fff;
+  --color-nav-lang: #fde68a;
 }
 
 [data-theme="dark"] {
   --color-main: #222;
   --color-text: #ddd;
   --color-bg: #222;
+  --color-nav-lang: #222;
 }
 
 .color-main {
@@ -25,6 +27,11 @@
 
 .color-text {
   color: var(--color-text);
+  transition: 0.3s;
+}
+
+.color-text-nav-lang {
+  color: var(--color-nav-lang);
   transition: 0.3s;
 }
 
