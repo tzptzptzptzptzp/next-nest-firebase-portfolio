@@ -17,13 +17,17 @@ export const LangSwitch = () => {
   return (
     <>
       <button onClick={() => handleClick(isLang)} className="flex-center w-[4.5rem] h-[4.5rem]">
-        <div className="flex relative z-0 w-[4.5rem] h-[2.5rem] p-[1px] border-4 rounded-lg text-[1.25rem] font-bold">
-          <div className="absolute top-0 -left-[1.8px] -z-10 w-1/2 h-full bg-text_dark" style={{ transform: 'scale(1.05)' }}></div>
-          <div className="w-1/2 text-bg_dark" style={{ transform: 'translateX(1px)' }}>
-            Ja
+        <div className="flex relative z-0 w-[4.5rem] h-[2.5rem] p-[1px] border-4 rounded-lg text-[1.25rem] font-black">
+          <div className={`absolute top-0 ${isLang === 'ja' ? '-left-[1px]' : '-right-[1px]'} -z-10 w-1/2 h-full color-border duration-300`} style={{ transform: 'scale(1.05)' }}></div>
+          <div className={`w-1/2  ${isLang === 'ja' ? 'color-text-nav-lang' : 'color-text'}`}>
+            <p style={{ transform: isLang === 'ja' ? 'none' : 'translateX(1.8px)' }}>
+              Ja
+            </p>
           </div>
-          <div className="w-1/2" style={{ transform: 'translateX(1px)' }}>
-            En
+          <div className={`w-1/2  ${isLang === 'en' ? 'color-text-nav-lang' : 'color-text'}`}>
+            <p style={{ transform: isLang === 'en' ? 'translateX(3.5px)' : 'translateX(1.5px)' }}>
+              En
+            </p>
           </div>
         </div>
       </button>
