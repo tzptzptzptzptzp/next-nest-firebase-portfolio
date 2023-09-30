@@ -27,6 +27,7 @@ export const useInitialize = () => {
     dispatch(toggleTheme(currentColorMode));
   };
   setInitialColorMode();
+  dispatch(fetchData(mockData));
 };
 
 export default useInitialize;
