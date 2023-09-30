@@ -1,4 +1,4 @@
-import { profileData } from "./profile";
+import { profileData as profile } from "./profile";
 import { aboutMeData } from "./aboutMe";
 import { favoriteData } from "./favorite";
 import { skillData } from "./skill";
@@ -10,7 +10,7 @@ import { experienceData } from "./experience";
 const enhancing = favoriteData;
 
 export const data = {
-  profileData,
+  profile,
   content: {
     aboutMeData,
     favoriteData,
