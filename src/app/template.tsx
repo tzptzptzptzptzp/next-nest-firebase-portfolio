@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { Zen_Maru_Gothic } from 'next/font/google'
 
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
-import { toggleTheme } from '@/redux/themeSlice'
+import { toggleTheme } from '@/redux/slice/themeSlice'
 
 const fontMain = Zen_Maru_Gothic({ weight: ['500', '700'], subsets: ['latin'] })
 
