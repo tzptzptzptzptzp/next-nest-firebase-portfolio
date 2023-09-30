@@ -3,6 +3,7 @@ export const profileData = {
     en: "Hiroki Tetsuka",
     ja: "テツカ ヒロキ",
   },
+  nickname: "tzp",
   occupation: {
     en: "WebDeveloper<br>Designer / Creator",
     ja: "エンジニア<br>デザイナー / クリエイター",
