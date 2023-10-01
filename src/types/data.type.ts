@@ -1,22 +1,29 @@
+import { switchingLang } from "./switchingLang.type";
+
 export type dataType = {
   profile: profileType;
   content: contentType;
 };
 
 export type profileType = {
-  name: {
-    en: string;
-    ja: string;
-  };
+  occupation: occupationType;
+  date: dateType;
+} & nameType &
+  linksType;
+
+export type nameType = {
+  name: switchingLang;
   nickname: string;
-  occupation: {
-    en: string;
-    ja: string;
-  };
-  date: {
-    birth: string;
-    engineering: string;
-  };
+};
+
+export type occupationType = switchingLang;
+
+export type dateType = {
+  birth: string;
+  engineering: string;
+};
+
+export type linksType = {
   sns: {
     github: string;
     x: string;
@@ -36,10 +43,7 @@ export type contentType = {
   experienceData: experienceType;
 };
 
-export type aboutMeType = {
-  en: string;
-  ja: string;
-};
+export type aboutMeType = switchingLang;
 
 export type favoriteType = string[];
 
@@ -61,14 +65,8 @@ export type skillSetType = {
 export type projectType = projectItemType[];
 
 export type projectItemType = {
-  title: {
-    en: string;
-    ja: string;
-  };
-  description: {
-    en: string;
-    ja: string;
-  };
+  title: switchingLang;
+  description: switchingLang;
   technology: string[];
   completion_date: string;
 };
@@ -85,14 +83,8 @@ export type portfolioItemType = {
 export type careerType = careerItemType[];
 
 export type careerItemType = {
-  name: {
-    en: string;
-    ja: string;
-  };
-  description: {
-    en: string;
-    ja: string;
-  };
+  name: switchingLang;
+  description: switchingLang;
   join: string;
   leave: string;
   link: string;
