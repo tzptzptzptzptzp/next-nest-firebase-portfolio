@@ -8,7 +8,7 @@ export const UserEngineering = ({ data }: { data: dateType["engineering"] }) => 
     <>
       <div className="flex-center gap-2">
         <FontAwesomeIcon icon={faDisplay} width={'1em'} />
-        <p>2020.2 ~</p>
+        <p>{data} ~</p>
       </div>
     </>
   )

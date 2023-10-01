@@ -8,7 +8,7 @@ export const UserBirth = ({ data }: { data: dateType["birth"] }) => {
     <>
       <div className="flex-center gap-1">
         <FontAwesomeIcon icon={faCakeCandles} height={'1em'} />
-        <p>1994.5</p>
+        <p>{data}</p>
       </div>
     </>
   )
