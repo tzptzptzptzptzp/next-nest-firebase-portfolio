@@ -1,7 +1,9 @@
 import { ContentTitle } from "../Title"
 import { faRocket } from "@fortawesome/free-solid-svg-icons"
 
-export const Enhancing = () => {
+import { enhancingType } from "@/types/data.type"
+
+export const Enhancing = ({ data }: { data: enhancingType }) => {
   return (
     <>
       <div>

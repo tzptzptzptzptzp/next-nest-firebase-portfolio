@@ -1,6 +1,8 @@
 import { ContentTitle } from "../Title"
-import { faRoute } from "@fortawesome/free-solid-svg-icons"
 import { CareerBox } from "./Box"
+import { faRoute } from "@fortawesome/free-solid-svg-icons"
+
+import { careerType } from "@/types/data.type"
 
 const careerData = [
   {
@@ -26,7 +28,7 @@ const careerData = [
   },
 ]
 
-export const Career = () => {
+export const Career = ({ data }: { data: careerType }) => {
   return (
     <>
       <div>

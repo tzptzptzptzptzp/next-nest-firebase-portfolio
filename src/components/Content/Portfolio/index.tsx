@@ -2,6 +2,8 @@ import { ContentTitle } from "../Title"
 import { PortfolioBox } from "./Box"
 import { faGamepad } from "@fortawesome/free-solid-svg-icons"
 
+import { portfolioType } from "@/types/data.type"
+
 const portfolioData = [
   {
     name: 'This site',
@@ -35,7 +37,7 @@ const portfolioData = [
   },
 ]
 
-export const Portfolio = () => {
+export const Portfolio = ({ data }: { data: portfolioType }) => {
   return (
     <>
       <div>

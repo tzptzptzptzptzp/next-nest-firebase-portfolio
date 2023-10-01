@@ -16,15 +16,15 @@ export const Content = ({ data }: { data: contentType }) => {
       <div className='relative top-0 right-0 w-3/4 h-full py-24 pr-48 '>
         <div className='overflow-y-scroll h-full'>
           <div className='flex flex-col gap-16 p-16 color-bg'>
-            <AboutMe />
+            <AboutMe data={data.aboutMeData} />
             <GitHubStatus />
-            <Favorite />
-            <Enhancing />
-            <Skill />
-            <Project />
-            <Portfolio />
-            <Career />
-            <Experience />
+            <Favorite data={data.favoriteData} />
+            <Enhancing data={data.enhancingData} />
+            <Skill data={data.skillData} />
+            <Project data={data.projectData} />
+            <Portfolio data={data.portfolioData} />
+            <Career data={data.careerData} />
+            <Experience data={data.experienceData} />
           </div>
         </div>
       </div>

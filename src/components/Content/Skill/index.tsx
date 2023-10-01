@@ -1,6 +1,8 @@
-import { faWandSparkles } from "@fortawesome/free-solid-svg-icons"
 import { ContentTitle } from "../Title"
 import { SkillSection } from "./Section"
+import { faWandSparkles } from "@fortawesome/free-solid-svg-icons"
+
+import { skillType } from "@/types/data.type"
 
 const data = [
   {
@@ -60,7 +62,7 @@ const data = [
   }
 ]
 
-export const Skill = () => {
+export const Skill = ({ data }: { data: skillType }) => {
   return (
     <>
       <div className="flex flex-col gap-8">
