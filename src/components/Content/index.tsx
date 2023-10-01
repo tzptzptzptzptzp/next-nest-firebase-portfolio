@@ -8,7 +8,9 @@ import { Portfolio } from "./Portfolio"
 import { Career } from "./Career"
 import { Experience } from "./Experience"
 
-export const Content = () => {
+import { contentType } from "@/types/data.type"
+
+export const Content = ({ data }: { data: contentType }) => {
   return (
     <>
       <div className='relative top-0 right-0 w-3/4 h-full py-24 pr-48 '>

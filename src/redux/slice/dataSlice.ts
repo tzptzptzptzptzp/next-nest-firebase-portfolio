@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import { initialData } from "../initialData";
+
 export const dataSlice = createSlice({
   name: "data",
-  initialState: { data: {} },
+  initialState: { data: initialData },
   reducers: {
     fetchData: (state, action) => {
       state.data = action.payload;

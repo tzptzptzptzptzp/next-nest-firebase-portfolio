@@ -1,4 +1,4 @@
-import { profileData } from "./profile";
+import { profileData as profile } from "./profile";
 import { aboutMeData } from "./aboutMe";
 import { favoriteData } from "./favorite";
 import { skillData } from "./skill";
@@ -7,14 +7,14 @@ import { portfolioData } from "./portfolio";
 import { careerData } from "./career";
 import { experienceData } from "./experience";
 
-const enhancing = favoriteData;
+const enhancingData = favoriteData;
 
 export const data = {
-  profileData,
+  profile,
   content: {
     aboutMeData,
     favoriteData,
-    enhancing,
+    enhancingData,
     skillData,
     projectData,
     portfolioData,

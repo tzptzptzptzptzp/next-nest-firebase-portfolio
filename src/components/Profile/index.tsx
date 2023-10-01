@@ -5,7 +5,10 @@ import { UserBirth } from "./UserBirth"
 import { UserEngineering } from "./UserEngineering"
 import { SnsLinks } from "../SnsLinks"
 
-export const Profile = () => {
+import { profileType } from "@/types/data.type"
+
+export const Profile = ({ data }: { data: profileType }) => {
+
   return (
     <>
       <div className='relative top-0 left-0 w-1/4 h-full color-main'>
