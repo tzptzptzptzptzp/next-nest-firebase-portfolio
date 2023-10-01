@@ -15,8 +15,8 @@ export default function Home() {
     <main className="flex-center relative centering-x w-screen h-screen">
       <div className="flex relative w-full h-full">
         <Header />
-        <Profile />
-        <Content />
+        <Profile data={data.profile} />
+        <Content data={data.content} />
       </div>
     </main>
   )
