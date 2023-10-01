@@ -2,7 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLink } from "@fortawesome/free-solid-svg-icons"
 import { faGithub, faInstagram, faXTwitter } from "@fortawesome/free-brands-svg-icons"
 
-export const SnsLinks = () => {
+import { linksType } from "@/types/data.type"
+
+export const SnsLinks = ({ data }: { data: linksType }) => {
   return (
     <>
       <div className="flex-center gap-4 text-[1.8rem]">

@@ -1,6 +1,8 @@
-import { faFilm } from "@fortawesome/free-solid-svg-icons"
 import { ContentTitle } from "../Title"
 import { ProjectBox } from "./Box"
+import { faFilm } from "@fortawesome/free-solid-svg-icons"
+
+import { projectType } from "@/types/data.type"
 
 const projectData = [
   {
@@ -41,7 +43,7 @@ const projectData = [
   },
 ]
 
-export const Project = () => {
+export const Project = ({ data }: { data: projectType }) => {
   const ascOrderData = projectData.slice().sort((a, b) => new Date(a.completion_date).getTime() - new Date(b.completion_date).getTime())
 
   const oddIndexProjects = ascOrderData.filter((_, index) => index % 2 !== 1);

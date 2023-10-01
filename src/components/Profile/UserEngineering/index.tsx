@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faDisplay } from "@fortawesome/free-solid-svg-icons"
 
-export const UserEngineering = () => {
+import { dateType } from "@/types/data.type"
+
+export const UserEngineering = ({ data }: { data: dateType["engineering"] }) => {
   return (
     <>
       <div className="flex-center gap-2">

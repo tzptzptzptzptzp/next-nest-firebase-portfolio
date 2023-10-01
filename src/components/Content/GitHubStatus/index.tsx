@@ -2,6 +2,7 @@
 
 import { ContentTitle } from "../Title"
 import { faGithubAlt } from "@fortawesome/free-brands-svg-icons"
+
 import { useAppSelector } from "@/redux/hooks"
 
 export const GitHubStatus = () => {

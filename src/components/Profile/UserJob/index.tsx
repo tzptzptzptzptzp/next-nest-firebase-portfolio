@@ -1,4 +1,6 @@
-export const UserJob = () => {
+import { occupationType } from "@/types/data.type"
+
+export const UserJob = ({ data }: { data: occupationType }) => {
   return (
     <>
       <div className="text-center">

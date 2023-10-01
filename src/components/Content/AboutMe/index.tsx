@@ -1,6 +1,8 @@
 import { ContentTitle } from "../Title"
 import { faAddressCard } from "@fortawesome/free-regular-svg-icons"
 
+import { aboutMeType } from "@/types/data.type"
+
 const contentJa =
   `都内のITベンチャー企業で受託開発をしています。
 元はフロントエンドを主軸に開発を行っていましたが、現在はバックエンドの開発も行っています。
@@ -14,7 +16,7 @@ In my personal time, I actively keep up with various technologies.
 My future goal is to become a high - level full - stack engineer.
 I am dedicated to contributing to my GitHub repositories to demonstrate my commitment.`
 
-export const AboutMe = () => {
+export const AboutMe = ({ data }: { data: aboutMeType }) => {
   return (
     <>
       <div className="flex flex-col gap-10">

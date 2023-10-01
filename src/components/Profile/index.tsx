@@ -14,13 +14,13 @@ export const Profile = ({ data }: { data: profileType }) => {
       <div className='relative top-0 left-0 w-1/4 h-full color-main'>
         <div className="flex-center flex-col gap-3 w-full h-full">
           <UserIcon />
-          <UserName />
-          <UserJob />
+          <UserName data={{ name: data.name, nickname: data.nickname }} />
+          <UserJob data={data.occupation} />
           <div className="flex-center gap-8">
-            <UserBirth />
-            <UserEngineering />
+            <UserBirth data={data.date.birth} />
+            <UserEngineering data={data.date.engineering} />
           </div>
-          <SnsLinks />
+          <SnsLinks data={{ sns: data.sns, link: data.link }} />
         </div>
       </div>
     </>

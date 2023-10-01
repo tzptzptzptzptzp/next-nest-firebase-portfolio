@@ -1,4 +1,6 @@
-export const UserName = () => {
+import { nameType } from "@/types/data.type"
+
+export const UserName = ({ data }: { data: nameType }) => {
   return (
     <>
       <div className="text-center">
