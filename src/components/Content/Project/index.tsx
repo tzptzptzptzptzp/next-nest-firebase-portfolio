@@ -53,13 +53,13 @@ export const Project = () => {
         <ContentTitle icon={faFilm} title={'Project'} />
         <div className="grid grid-cols-2 gap-8">
           <div className="flex flex-col gap-6">
-            {oddIndexProjects.map((data) => (
-              <ProjectBox data={data} />
+            {oddIndexProjects.map((data, i) => (
+              <ProjectBox key={i} data={data} />
             ))}
           </div>
           <div className="flex flex-col gap-6">
-            {evenIndexProjects.map((data) => (
-              <ProjectBox data={data} />
+            {evenIndexProjects.map((data, i) => (
+              <ProjectBox key={i} data={data} />
             ))}
           </div>
         </div>
