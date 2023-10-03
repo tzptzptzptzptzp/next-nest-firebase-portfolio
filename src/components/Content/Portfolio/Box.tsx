@@ -14,8 +14,6 @@ type Props = {
 
 export const PortfolioBox = ({ data, i, length }: Props) => {
   const currentLang = useAppSelector((state) => state.lang.value)
-  console.log(data);
-
   return (
     <>
       <a href={data.link} className="flex flex-col gap-4 relative z-0 px-8 pt-4 pb-6 color-bg border rounded-lg" target="_blank" rel="noopener noreferrer">
