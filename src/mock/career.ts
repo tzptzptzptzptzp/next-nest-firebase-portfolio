@@ -5,8 +5,8 @@ export const careerData = [
       ja: "インフラ系営業職",
     },
     description: {
-      en: "A company not related to IT. While employed, he began studying programming by himself.",
-      ja: "",
+      en: "I was formerly employed in a non-IT company in a sales role. While working there, I began self-studying programming.",
+      ja: "非IT企業の営業職です。在職中にプログラミングの勉強を独学で始めました。",
     },
     join: "2019.9",
     leave: "2021.5",
@@ -18,8 +18,8 @@ export const careerData = [
       ja: "Design Tomato",
     },
     description: {
-      en: "Freelance for web production, web design, etc.",
-      ja: "",
+      en: "After leaving the company, I started working as a freelancer, specializing in web design and development.",
+      ja: "会社を退職し、フリーランスとしてWeb制作やデザインをスタートしました。",
     },
     join: "2022.2",
     leave: "",
@@ -31,8 +31,8 @@ export const careerData = [
       ja: "WEEL.inc",
     },
     description: {
-      en: "IT venture company. Step up from web production work to web development work.",
-      ja: "",
+      en: "I am now associated with an IT venture company, where I have transitioned from web design to application development. I enjoy my work every day.",
+      ja: "ITベンチャー企業です。Web制作からアプリケーション開発へステップアップしました。毎日楽しくお仕事しています。",
     },
     join: "2023.7",
     leave: "",
