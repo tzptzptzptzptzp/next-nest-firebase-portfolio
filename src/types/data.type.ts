@@ -74,8 +74,8 @@ export type projectItemType = {
 export type portfolioType = portfolioItemType[];
 
 export type portfolioItemType = {
-  name: string;
-  description: string;
+  name: switchingLang;
+  description: switchingLang;
   link: string;
   technology: string[];
 };

@@ -55,8 +55,14 @@ export const initialData = {
     ],
     portfolioData: [
       {
-        name: "",
-        description: "",
+        name: {
+          en: "",
+          ja: "",
+        },
+        description: {
+          en: "",
+          ja: "",
+        },
         link: "",
         technology: [""],
       },
