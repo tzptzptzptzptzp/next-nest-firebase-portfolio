@@ -1,38 +1,38 @@
 export const projectData = [
   {
     title: {
-      en: "Financial media function improvements",
+      en: "Financial Media Feature Enhancement",
       ja: "金融系メディア機能改修",
     },
     description: {
-      en: "Responsible for implementing new features of Laravel applications.",
+      en: "Responsible for implementing new features in a Laravel application",
       ja: "Laravelアプリケーションの新規機能実装などを担当",
     },
     technology: ["Laravel", "WordPress", "EC2"],
-    completion_date: "2023-09",
+    completion_date: "2023-10",
   },
   {
     title: {
-      en: "Financial media function improvements",
-      ja: "Financial media function improvements",
+      en: "Sustainable Web Application",
+      ja: "サスティナブルWebアプリケーション",
     },
     description: {
-      en: "Financial media function improvements.",
-      ja: "Financial media function improvements. Financial media function improvements",
+      en: "Responsible for the renewal of an existing application, including frontend and backend implementation",
+      ja: "既存アプリのリニューアル フロントエンド、バックエンドの実装を担当",
     },
-    technology: ["Vue", "Nest.js", "Supabase"],
-    completion_date: "2023-07",
+    technology: ["Next.js", "Redux", "Nest.js", "Firebase"],
+    completion_date: "2023-11",
   },
   {
     title: {
-      en: "Financial media function improvements",
-      ja: "Financial media function improvements",
+      en: "Web Customer Interaction Tool Application",
+      ja: "Web接客ツールアプリケーション",
     },
     description: {
-      en: "Financial media function improvements. Financial media function improvements.",
-      ja: "Financial media function improvements.",
+      en: "Responsible for implementing the frontend of a SaaS product for Inside Sales",
+      ja: "インサイドセールス向けSaaS フロントエンドの実装を担当",
     },
-    technology: ["React", "Next.js", "Firebase"],
-    completion_date: "2023-08",
+    technology: ["React", "Next.js", "Redux"],
+    completion_date: "2023-12",
   },
 ];
