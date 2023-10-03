@@ -6,12 +6,13 @@ import { Profile } from '@/components/Profile'
 
 import { useAppSelector } from "@/redux/hooks"
 
-import { HomeContent as content } from '@/data/content'
+import { SkillContent as content } from '@/data/content'
 
 import { dataType } from "@/types/data.type"
 
-export default function Home() {
+export default function Skill() {
   const data: dataType = useAppSelector((state) => state.data.data)
+
   return (
     <main className="flex-center relative centering-x w-screen h-screen">
       <div className="flex relative w-full h-full">
