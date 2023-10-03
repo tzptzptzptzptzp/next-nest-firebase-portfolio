@@ -1,29 +1,33 @@
 import { Icon } from "@/components/Icon"
 import { faBuilding, faCalendar } from "@fortawesome/free-regular-svg-icons"
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
-import { CareerType } from "@/types/CareerType"
+
+import { useAppSelector } from "@/redux/hooks"
+
+import { careerItemType } from "@/types/data.type"
 
 type Props = {
-  data: CareerType
+  data: careerItemType
   i: number
   length: number
 }
 
 export const CareerBox = ({ data, i, length }: Props) => {
+  const currentLang = useAppSelector((state) => state.lang.value)
   const content = (
     <>
       <div className="flex items-center gap-2">
         <div style={{ transform: 'translateY(.15rem)' }}>
           <Icon icon={faBuilding} />
         </div>
-        <h3 className="text-[2.2rem] font-bold">{data.name}</h3>
+        <h3 className="text-[2.2rem] font-bold">{currentLang === 'en' ? data.name.en : data.name.ja}</h3>
         {data.link != '' ? (
           <div style={{ transform: 'translateY(.25rem)' }}>
             <Icon icon={faArrowUpRightFromSquare} />
           </div>
         ) : ''}
       </div>
-      <p className="pl-3 text-[1.8rem]">{data.description}</p>
+      <p className="pl-3 text-[1.8rem]">{currentLang === 'en' ? data.description.en : data.description.ja}</p>
       <div className="flex items-center gap-2 mt-4 pl-3">
         <div style={{ transform: 'translateY(-0.1rem)' }}>
           <Icon icon={faCalendar} />

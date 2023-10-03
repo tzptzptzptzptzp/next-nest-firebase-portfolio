@@ -1,15 +1,21 @@
 import { Icon } from "@/components/Icon"
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons"
 import { faArrowUpRightFromSquare, faWrench } from "@fortawesome/free-solid-svg-icons"
-import { PortfolioType } from "@/types/PortfolioType"
+
+import { useAppSelector } from "@/redux/hooks"
+
+import { portfolioItemType } from "@/types/data.type"
 
 type Props = {
-  data: PortfolioType
+  data: portfolioItemType
   i: number
   length: number
 }
 
 export const PortfolioBox = ({ data, i, length }: Props) => {
+  const currentLang = useAppSelector((state) => state.lang.value)
+  console.log(data);
+
   return (
     <>
       <a href={data.link} className="flex flex-col gap-4 relative z-0 px-8 pt-4 pb-6 color-bg border rounded-lg" target="_blank" rel="noopener noreferrer">
@@ -17,14 +23,14 @@ export const PortfolioBox = ({ data, i, length }: Props) => {
           <div style={{ transform: 'translateY(.15rem)' }}>
             <Icon icon={faWindowMaximize} />
           </div>
-          <h3 className="text-[2.2rem] font-bold">{data.name}</h3>
+          <h3 className="text-[2.2rem] font-bold">{currentLang === 'en' ? data.name.en : data.name.ja}</h3>
           {data.link != '' ? (
             <div style={{ transform: 'translateY(.25rem)' }}>
               <Icon icon={faArrowUpRightFromSquare} />
             </div>
           ) : ''}
         </div>
-        <p className="pl-1 text-[1.8rem] leading-tight">{data.description}</p>
+        <p className="pl-1 text-[1.8rem] leading-tight">{currentLang === 'en' ? data.description.en : data.description.ja}</p>
         <div className="flex items-center gap-2 pt-4 pl-1 border-t text-[1.5rem]">
           <div style={{ transform: 'translateY(-0.05rem)' }}>
             <Icon icon={faWrench} />
