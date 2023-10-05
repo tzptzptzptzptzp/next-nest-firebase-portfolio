@@ -16,7 +16,7 @@ export const Navigation = () => {
             </Link>
           </li>
           <li>
-            <Link href={'./'} className="text-[4.5rem]">
+            <Link href={'./skill'} className="text-[4.5rem]">
               <Icon icon={faWandMagicSparkles} />
             </Link>
           </li>
