@@ -1,0 +1,13 @@
+.box {
+  &:hover {
+    .levelBox {
+      opacity: 1;
+    }
+  }
+}
+
+.levelBox {
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+}
