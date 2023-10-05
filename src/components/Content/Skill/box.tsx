@@ -1,10 +1,11 @@
 import { Icon } from "@/components/Icon"
-import { SkillType } from "@/types/SkillType"
 import { faIcons, faStar } from "@fortawesome/free-solid-svg-icons"
 import { faStar as outline } from "@fortawesome/free-regular-svg-icons"
 
+import { skillSetType } from "@/types/data.type"
+
 type Props = {
-  skill: SkillType
+  skill: skillSetType
 }
 
 export const SkillBox = ({ skill }: Props) => {
