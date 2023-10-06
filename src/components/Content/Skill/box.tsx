@@ -2,6 +2,8 @@ import { Icon } from "@/components/Icon"
 import { faIcons, faStar } from "@fortawesome/free-solid-svg-icons"
 import { faStar as outline } from "@fortawesome/free-regular-svg-icons"
 
+import { useAppSelector } from "@/redux/hooks"
+
 import { skillSetType } from "@/types/data.type"
 
 import styles from './skillBox.module.scss'
@@ -11,6 +13,7 @@ type Props = {
 }
 
 export const SkillBox = ({ skill }: Props) => {
+  const currentLang = useAppSelector((state) => state.lang.value)
   const validStars = Array.from({ length: skill.rate }, (_, index) => (
     <Icon key={index} icon={faStar} />
   ));
@@ -18,26 +21,44 @@ export const SkillBox = ({ skill }: Props) => {
     <Icon key={index} icon={outline} />
   ));
 
-  const level = (rate: number) => {
-    let text = ''
+  const level = (rate: number, lang: string) => {
+    let text = {
+      en: '',
+      ja: ''
+    }
     switch (rate) {
       case 1:
-        text = 'これから使いこなす'
+        text = {
+          en: 'Mastering it from now on',
+          ja: 'これから使いこなす'
+        }
         break;
       case 2:
-        text = 'ちょっと使いこなす'
+        text = {
+          en: 'Getting the hang of it a bit',
+          ja: 'ちょっと使いこなす'
+        }
         break;
       case 4:
-        text = 'いい感じに使いこなす'
+        text = {
+          en: 'Using it smoothly and comfortably',
+          ja: 'いい感じに使いこなす'
+        }
         break;
       case 5:
-        text = '思い通りに使いこなす'
+        text = {
+          en: 'Mastering it exactly as intended',
+          ja: '思い通りに使いこなす'
+        }
         break;
       default:
-        text = '何となく使いこなす'
+        text = {
+          en: 'Using it somewhat intuitively',
+          ja: '何となく使いこなす'
+        }
         break;
     }
-    return text
+    return lang === 'en' ? text.en : text.ja
   }
   return (
     <>
@@ -60,7 +81,7 @@ export const SkillBox = ({ skill }: Props) => {
           )}
         </div>
         <div className={`${styles.levelBox} flex-center absolute top-0 left-0 w-full h-full bg-text_light bg-opacity-90`}>
-          <p className="text-bg_light font-bold">{level(skill.rate)}</p>
+          <p className="text-bg_light font-bold">{level(skill.rate, currentLang)}</p>
         </div>
       </div>
     </>
