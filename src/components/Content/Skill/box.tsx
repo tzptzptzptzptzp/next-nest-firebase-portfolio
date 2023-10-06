@@ -2,6 +2,8 @@ import { Icon } from "@/components/Icon"
 import { faIcons, faStar } from "@fortawesome/free-solid-svg-icons"
 import { faStar as outline } from "@fortawesome/free-regular-svg-icons"
 
+import { useAppSelector } from "@/redux/hooks"
+
 import { skillSetType } from "@/types/data.type"
 
 import styles from './skillBox.module.scss'
@@ -11,6 +13,7 @@ type Props = {
 }
 
 export const SkillBox = ({ skill }: Props) => {
+  const currentLang = useAppSelector((state) => state.lang.value)
   const validStars = Array.from({ length: skill.rate }, (_, index) => (
     <Icon key={index} icon={faStar} />
   ));
@@ -18,7 +21,7 @@ export const SkillBox = ({ skill }: Props) => {
     <Icon key={index} icon={outline} />
   ));
 
-  const level = (rate: number) => {
+  const level = (rate: number, lang: string) => {
     let text = {
       en: '',
       ja: ''
@@ -55,7 +58,7 @@ export const SkillBox = ({ skill }: Props) => {
         }
         break;
     }
-    return text
+    return lang === 'en' ? text.en : text.ja
   }
   return (
     <>
@@ -78,7 +81,7 @@ export const SkillBox = ({ skill }: Props) => {
           )}
         </div>
         <div className={`${styles.levelBox} flex-center absolute top-0 left-0 w-full h-full bg-text_light bg-opacity-90`}>
-          <p className="text-bg_light font-bold">{level(skill.rate)}</p>
+          <p className="text-bg_light font-bold">{level(skill.rate, currentLang)}</p>
         </div>
       </div>
     </>
