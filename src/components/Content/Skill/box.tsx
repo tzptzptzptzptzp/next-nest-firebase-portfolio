@@ -19,22 +19,40 @@ export const SkillBox = ({ skill }: Props) => {
   ));
 
   const level = (rate: number) => {
-    let text = ''
+    let text = {
+      en: '',
+      ja: ''
+    }
     switch (rate) {
       case 1:
-        text = 'これから使いこなす'
+        text = {
+          en: 'Mastering it from now on',
+          ja: 'これから使いこなす'
+        }
         break;
       case 2:
-        text = 'ちょっと使いこなす'
+        text = {
+          en: 'Getting the hang of it a bit',
+          ja: 'ちょっと使いこなす'
+        }
         break;
       case 4:
-        text = 'いい感じに使いこなす'
+        text = {
+          en: 'Using it smoothly and comfortably',
+          ja: 'いい感じに使いこなす'
+        }
         break;
       case 5:
-        text = '思い通りに使いこなす'
+        text = {
+          en: 'Mastering it exactly as intended',
+          ja: '思い通りに使いこなす'
+        }
         break;
       default:
-        text = '何となく使いこなす'
+        text = {
+          en: 'Using it somewhat intuitively',
+          ja: '何となく使いこなす'
+        }
         break;
     }
     return text
