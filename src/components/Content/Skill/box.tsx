@@ -80,7 +80,7 @@ export const SkillBox = ({ skill }: Props) => {
             </div>
           )}
         </div>
-        <div className={`${styles.levelBox} flex-center absolute top-0 left-0 w-full h-full bg-text_light bg-opacity-90`}>
+        <div className={`${styles.levelBox} flex-center absolute top-0 left-0 w-full h-full rounded-lg bg-text_light bg-opacity-90`}>
           <p className="text-bg_light font-bold">{level(skill.rate, currentLang)}</p>
         </div>
       </div>
