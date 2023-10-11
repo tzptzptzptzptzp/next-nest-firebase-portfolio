@@ -1,23 +1,24 @@
-import TextField, { TextFieldProps } from '@mui/material/TextField'
+import { forwardRef } from 'react'
 
-export const TextInput = (props: TextFieldProps) => {
-  return (
-    <TextField
-      className={props.className}
-      fullWidth={props.fullWidth}
-      label={props.label}
-      variant={props.variant}
-      multiline={props.multiline}
-      required={props.required}
-      rows={props.rows}
-      value={props.value}
-      type={props.type}
-      onChange={props.onChange}
-      sx={{
-        '& .MuiInputBase-root': {
-          color: 'red'
-        }
-      }}
-    />
-  )
-}
+import { useAppSelector } from '@/redux/hooks'
+
+import { InputAttributeType, InputType } from '../ui.type'
+
+type Props = {
+  value?: string
+  type?: InputAttributeType
+} & Omit<InputType, 'value'>
+
+export const TextInput = forwardRef<HTMLInputElement, Props>(
+  ({
+    value,
+    type = 'text',
+    onChange,
+    ...props
+  }, ref) => {
+    const isTheme = useAppSelector((state) => state.theme.value)
+    return (
+      <input className='border' type={type} value={value} onChange={onChange} {...props} />
+    )
+  }
+)
