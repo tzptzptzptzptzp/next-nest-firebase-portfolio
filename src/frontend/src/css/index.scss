@@ -30,6 +30,11 @@
   transition: 0.3s;
 }
 
+.color-text-bg {
+  color: var(--color-bg);
+  transition: 0.3s;
+}
+
 .color-text-nav-lang {
   color: var(--color-nav-lang);
   transition: 0.3s;
@@ -40,9 +45,13 @@
   transition: 0.3s;
 }
 
+.color-bg-text {
+  background-color: var(--color-text);
+  transition: 0.3s;
+}
+
 .color-border {
   border-color: var(--color-text);
-  background-color: var(--color-text);
   transition: 0.3s;
 }
 
