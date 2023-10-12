@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "npm run front & npm run server",
     "front": "cd src/frontend && next dev",
     "server": "cd src/backend && nest start",
     "build": "next build",
