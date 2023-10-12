@@ -7,12 +7,14 @@ import { InputAttributeType, InputType } from '../ui.type'
 type Props = {
   value?: string
   type?: InputAttributeType
+  width?: string
 } & Omit<InputType, 'value'>
 
 export const TextInput = forwardRef<HTMLInputElement, Props>(
   ({
     value,
     type = 'text',
+    width,
     onChange,
     ...props
   }, ref) => {
@@ -20,6 +22,7 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(
     return (
       <input
         className={`p-2 border color-border rounded-lg ${isTheme === 'light' ? 'color-bg' : ''} color-text`}
+        style={width ? { width: `${width}` } : undefined}
         ref={ref} type={type} value={value} onChange={onChange} {...props}
       />
     )
