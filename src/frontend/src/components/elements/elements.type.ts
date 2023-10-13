@@ -7,3 +7,10 @@ export type TextType = {
   size?: string;
   style?: string;
 };
+
+export type LabelType = {
+  htmlFor?: string;
+  isRequired?: boolean;
+  style?: string;
+  text: string | JSX.Element;
+};
