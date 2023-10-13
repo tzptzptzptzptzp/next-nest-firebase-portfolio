@@ -1,4 +1,5 @@
 import { PropsWithChildren, memo } from 'react'
+import { Label } from '@/components/elements/Label'
 import { Text } from '@/components/elements/Text'
 
 import { type Control, type Path, type FieldErrors, type FieldError, type FieldValues, useController } from 'react-hook-form'
@@ -38,6 +39,7 @@ const FormElementBase = <T extends FieldValues>({
   return (
     <>
       <div className={formStyle}>
+        {label !== undefined && <Label htmlFor={name} isRequired={isRequired} style={labelStyle} text={label} />}
         <div className={`${containerStyle ? containerStyle : ''}`}>
           {children}
         </div>
