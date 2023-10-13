@@ -1,4 +1,6 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, memo } from 'react'
+import { Text } from '@/components/elements/Text'
+
 import { type Control, type Path, type FieldErrors, type FieldError, type FieldValues, useController } from 'react-hook-form'
 
 export type FormElementProps<T extends FieldValues> = {
@@ -20,7 +22,6 @@ const FormElementBase = <T extends FieldValues>({
   control,
   errorOff,
   errorStyle,
-  errors,
   formStyle,
   isRequired,
   label,
@@ -41,11 +42,13 @@ const FormElementBase = <T extends FieldValues>({
           {children}
         </div>
         {!errorOff && (
-          <p>
+          <Text bold color={'text-red-400'} size={'2rem'}>
             {error?.message}
-          </p>
+          </Text>
         )}
-      </div>
+      </div >
     </>
   )
 }
+
+export const FormElement = memo(FormElementBase)
