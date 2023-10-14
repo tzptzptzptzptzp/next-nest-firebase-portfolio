@@ -15,6 +15,7 @@ export type InputAttributeType =
 
 export type InputType = {
   autoComplete?: "off" | "on" | "email" | "current-password" | "new-password";
+  className?: string;
   disabled?: boolean;
   required?: boolean;
   label?: string | JSX.Element;
