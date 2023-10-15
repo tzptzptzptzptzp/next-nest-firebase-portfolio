@@ -1,14 +1,19 @@
-import { useController } from "react-hook-form"
-import { TextInput } from "../../TextInput"
-import { FormElement } from "../FormElement"
 import { useCallback } from "react"
+import { FormElement, FormElementProps } from "../FormElement"
+import { TextInput, TextInputType } from "../../TextInput"
 
-export const FormTextInput = ({
+import { type FieldValues, useController, Control } from "react-hook-form"
+
+type Props<T extends FieldValues> = {
+  style?: string
+} & FormElementProps<T> & TextInputType
+
+export const FormTextInput = <T extends FieldValues>({
   autoComplete = 'off',
   maxLength = 250,
   type = 'text',
   ...props
-}) => {
+}: Props<T>) => {
   const {
     control,
     disabled,
@@ -43,7 +48,7 @@ export const FormTextInput = ({
     <>
       <FormElement
         containerStyle={containerStyle}
-        control={control}
+        control={control as Control<FieldValues, unknown>}
         errorOff={errorOff}
         errorStyle={errorStyle}
         formStyle={formStyle}
