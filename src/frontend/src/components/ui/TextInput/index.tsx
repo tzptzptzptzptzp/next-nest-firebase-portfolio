@@ -2,15 +2,19 @@ import { forwardRef } from 'react'
 
 import { useAppSelector } from '@/redux/hooks'
 
+import { FieldError } from 'react-hook-form'
 import { InputAttributeType, InputType } from '../ui.type'
 
-type Props = {
-  value?: string
+export type TextInputType = {
+  className?: string
+  error?: FieldError
+  isError?: boolean
   type?: InputAttributeType
+  value?: string
   width?: string
 } & Omit<InputType, 'value'>
 
-export const TextInput = forwardRef<HTMLInputElement, Props>(
+export const TextInput = forwardRef<HTMLInputElement, TextInputType>(
   ({
     className = '',
     value,
