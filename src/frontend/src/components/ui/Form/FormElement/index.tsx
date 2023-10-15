@@ -44,7 +44,7 @@ const FormElementBase = <T extends FieldValues>({
           {children}
         </div>
         {!errorOff && (
-          <Text bold color={'text-red-400'} size={'2rem'}>
+          <Text bold color={'text-red-400'} size={'2rem'} style={errorStyle}>
             {error?.message}
           </Text>
         )}
