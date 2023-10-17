@@ -57,7 +57,7 @@ export const FormTextInput = <T extends FieldValues>({
         labelStyle={labelStyle}
         name={name}
       >
-        <div className={`${disabled && ''}`}>
+        <div>
           <TextInput
             autoComplete={autoComplete}
             className={style}
