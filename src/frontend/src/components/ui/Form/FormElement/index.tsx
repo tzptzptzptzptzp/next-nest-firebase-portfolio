@@ -38,13 +38,13 @@ const FormElementBase = <T extends FieldValues>({
 
   return (
     <>
-      <div className={formStyle}>
+      <div {...(formStyle ? { className: formStyle } : {})}>
         {label !== undefined && <Label htmlFor={name} isRequired={isRequired} style={labelStyle} text={label} />}
-        <div className={`${containerStyle ? containerStyle : ''}`}>
+        <div {...(containerStyle ? { className: containerStyle } : {})}>
           {children}
         </div>
         {!errorOff && (
-          <Text bold color={'text-red-400'} size={'2rem'} style={errorStyle}>
+          <Text bold color={'text-red-400'} size={'2rem'} style={`mt-2 pl-2 ${errorStyle}`}>
             {error?.message}
           </Text>
         )}
