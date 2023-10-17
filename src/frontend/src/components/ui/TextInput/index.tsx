@@ -23,11 +23,11 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputType>(
     onChange,
     ...props
   }, ref) => {
-    const isTheme = useAppSelector((state) => state.theme.value)
+    const disabled = props.disabled
     const id = props.name
     return (
       <input
-        className={`p-2 border-b color-border !outline-0 focus-visible:outline-none ${isTheme === 'light' ? 'color-bg' : ''} color-text ${className}`}
+        className={`${disabled ? 'h-0' : 'p-2'} border-b color-border !outline-0 focus-visible:outline-none color-text ${className}`}
         style={width ? { width: `${width}` } : undefined}
         ref={ref} id={id} type={type} value={value} onChange={onChange} {...props}
       />
