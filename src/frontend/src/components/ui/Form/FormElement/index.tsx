@@ -38,7 +38,7 @@ const FormElementBase = <T extends FieldValues>({
 
   return (
     <>
-      <div className={formStyle}>
+      <div {...(formStyle ? { className: formStyle } : {})}>
         {label !== undefined && <Label htmlFor={name} isRequired={isRequired} style={labelStyle} text={label} />}
         <div {...(containerStyle ? { className: containerStyle } : {})}>
           {children}
