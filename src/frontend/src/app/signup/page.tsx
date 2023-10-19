@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { UserSchema } from '@/schema/user'
+import { Button } from '@/components/ui/Button'
 
 export default function SignUp() {
   const [userName, setUserName] = useState('')
@@ -83,6 +84,12 @@ export default function SignUp() {
               onChange={inputConfirmPassword}
               type='password'
             />
+            <div className='flex-center w-full'>
+              <Button
+                text={'SingUp'}
+                type={'submit'}
+              />
+            </div>
           </Form>
         </div>
       </main>
