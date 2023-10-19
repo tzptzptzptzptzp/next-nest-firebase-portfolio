@@ -1,6 +1,7 @@
 "use client"
 
 import { ChangeEvent, useCallback, useState } from 'react'
+import { Form } from '@/components/ui/Form'
 import { FormTextInput } from '@/components/ui/Form/FormTextInput'
 
 import { useForm } from 'react-hook-form'
@@ -38,45 +39,51 @@ export default function SignUp() {
     setConfirmPassword(e.target.value)
   }, [setConfirmPassword])
 
+  const handleSubmitForm = () => {
+
+  }
+
   return (
     <>
       <main className="flex-center relative centering-x w-screen h-screen">
         <div className="flex flex-col gap-8 relative w-1/3 h-auto p-16 rounded-3xl color-bg">
-          <FormTextInput
-            control={control}
-            isRequired
-            label={'ユーザー名'}
-            maxLength={20}
-            name={'userName'}
-            onChange={inputUserName}
-          />
-          <FormTextInput
-            control={control}
-            isRequired
-            label={'メールアドレス'}
-            maxLength={100}
-            name={'email'}
-            onChange={inputEmail}
-            type='email'
-          />
-          <FormTextInput
-            control={control}
-            isRequired
-            label={'パスワード'}
-            maxLength={100}
-            name={'password'}
-            onChange={inputPassword}
-            type='password'
-          />
-          <FormTextInput
-            control={control}
-            isRequired
-            label={'パスワード(確認)'}
-            maxLength={100}
-            name={'confirmPassword'}
-            onChange={inputConfirmPassword}
-            type='password'
-          />
+          <Form onSubmit={handleSubmit(handleSubmitForm)}>
+            <FormTextInput
+              control={control}
+              isRequired
+              label={'ユーザー名'}
+              maxLength={20}
+              name={'userName'}
+              onChange={inputUserName}
+            />
+            <FormTextInput
+              control={control}
+              isRequired
+              label={'メールアドレス'}
+              maxLength={100}
+              name={'email'}
+              onChange={inputEmail}
+              type='email'
+            />
+            <FormTextInput
+              control={control}
+              isRequired
+              label={'パスワード'}
+              maxLength={100}
+              name={'password'}
+              onChange={inputPassword}
+              type='password'
+            />
+            <FormTextInput
+              control={control}
+              isRequired
+              label={'パスワード(確認)'}
+              maxLength={100}
+              name={'confirmPassword'}
+              onChange={inputConfirmPassword}
+              type='password'
+            />
+          </Form>
         </div>
       </main>
     </>
