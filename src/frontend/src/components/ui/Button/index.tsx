@@ -1,3 +1,5 @@
+import styles from './Button.module.scss'
+
 type Props = {
   bg?: string
   children?: React.ReactNode
@@ -25,7 +27,7 @@ export const Button = ({
   return (
     <>
       <button
-        className={`${bg} ${className}`}
+        className={`px-6 pt-2 pb-4 duration-200 ${bg} ${className} ${styles.button}`}
         disabled={disabled}
         ref={ref}
         type={type}
