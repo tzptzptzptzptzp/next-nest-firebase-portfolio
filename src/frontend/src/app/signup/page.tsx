@@ -57,6 +57,7 @@ export default function SignUp() {
             maxLength={100}
             name={'email'}
             onChange={inputEmail}
+            type='email'
           />
           <FormTextInput
             control={control}
@@ -65,6 +66,7 @@ export default function SignUp() {
             maxLength={100}
             name={'password'}
             onChange={inputPassword}
+            type='password'
           />
           <FormTextInput
             control={control}
@@ -73,6 +75,7 @@ export default function SignUp() {
             maxLength={100}
             name={'confirmPassword'}
             onChange={inputConfirmPassword}
+            type='password'
           />
         </div>
       </main>
