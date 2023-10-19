@@ -46,8 +46,8 @@ export default function SignUp() {
   return (
     <>
       <main className="flex-center relative centering-x w-screen h-screen">
-        <div className="flex flex-col gap-8 relative w-1/3 h-auto p-16 rounded-3xl color-bg">
-          <Form onSubmit={handleSubmit(handleSubmitForm)}>
+        <div className="relative w-1/3 h-auto p-16 rounded-3xl color-bg">
+          <Form className='flex flex-col gap-8' onSubmit={handleSubmit(handleSubmitForm)}>
             <FormTextInput
               control={control}
               isRequired
