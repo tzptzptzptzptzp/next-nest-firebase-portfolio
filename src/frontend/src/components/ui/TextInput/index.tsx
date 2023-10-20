@@ -17,17 +17,18 @@ export type TextInputType = {
 export const TextInput = forwardRef<HTMLInputElement, TextInputType>(
   ({
     className = '',
-    value,
-    type = 'text',
-    width,
+    isError = false,
     onChange,
+    type = 'text',
+    value,
+    width,
     ...props
   }, ref) => {
     const disabled = props.disabled
     const id = props.name
     return (
       <input
-        className={`${disabled ? 'h-0' : 'p-2'} border-b color-border !outline-0 focus-visible:outline-none color-text ${className}`}
+        className={`${disabled ? 'h-0' : 'p-2'} border-b ${isError ? 'border-red-400' : 'color-border'} !outline-0 focus-visible:outline-none color-text ${className}`}
         style={width ? { width: `${width}` } : undefined}
         ref={ref} id={id} type={type} value={value} onChange={onChange} {...props}
       />
