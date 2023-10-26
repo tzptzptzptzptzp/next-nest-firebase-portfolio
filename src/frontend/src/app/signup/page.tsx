@@ -1,21 +1,18 @@
 "use client"
 
-import { ChangeEvent, useCallback, useState } from 'react'
+import { Button } from '@/components/ui/Button'
 import { Form } from '@/components/ui/Form'
 import { FormTextInput } from '@/components/ui/Form/FormTextInput'
+
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../../../firebase'
 
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { UserSchema } from '@/schema/user'
-import { Button } from '@/components/ui/Button'
+import { signUpType, UserSchema } from '@/schema/user'
 
 export default function SignUp() {
-  const [userName, setUserName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
-
   const defaultValues = UserSchema.defaultValues
 
   const { control, handleSubmit, reset } = useForm({
@@ -24,24 +21,8 @@ export default function SignUp() {
     resolver: zodResolver(UserSchema.signUpSchema)
   })
 
-  const inputUserName = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    setUserName(e.target.value)
-  }, [setUserName])
-
-  const inputEmail = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value)
-  }, [setEmail])
-
-  const inputPassword = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value)
-  }, [setPassword])
-
-  const inputConfirmPassword = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    setConfirmPassword(e.target.value)
-  }, [setConfirmPassword])
-
-  const handleSubmitForm = () => {
-
+  const handleSubmitForm = (reqBody: signUpType) => {
+    createUserWithEmailAndPassword(auth, reqBody.email, reqBody.password)
   }
 
   return (
@@ -55,7 +36,6 @@ export default function SignUp() {
               label={'ユーザー名'}
               maxLength={20}
               name={'userName'}
-              onChange={inputUserName}
             />
             <FormTextInput
               control={control}
@@ -63,7 +43,6 @@ export default function SignUp() {
               label={'メールアドレス'}
               maxLength={100}
               name={'email'}
-              onChange={inputEmail}
               type='email'
             />
             <FormTextInput
@@ -72,7 +51,6 @@ export default function SignUp() {
               label={'パスワード'}
               maxLength={100}
               name={'password'}
-              onChange={inputPassword}
               type='password'
             />
             <FormTextInput
@@ -81,7 +59,6 @@ export default function SignUp() {
               label={'パスワード(確認)'}
               maxLength={100}
               name={'confirmPassword'}
-              onChange={inputConfirmPassword}
               type='password'
             />
             <div className='flex-center w-full'>
