@@ -6,6 +6,15 @@ import { firestore } from "firebase-admin";
 
 import * as admin from "firebase-admin";
 
+export const API_VERSION = "v1";
+export const envDoc = (): string => {
+  if (process.env.NODE_ENV === "production") {
+    return "production";
+  } else {
+    return "development";
+  }
+};
+
 @Injectable()
 export class FirebaseService {
   constructor(private configService: ConfigService) {
@@ -50,5 +59,17 @@ export class FirebaseService {
    */
   getStorage(): storage.Storage {
     return this.storage;
+  }
+
+  /**
+   * FirestoreCollection 取得
+   */
+  getCollectionRef(
+    collectionName: string
+  ): firestore.CollectionReference<firestore.DocumentData> {
+    return this.firestore
+      .collection(API_VERSION)
+      .doc(envDoc())
+      .collection(collectionName);
   }
 }
