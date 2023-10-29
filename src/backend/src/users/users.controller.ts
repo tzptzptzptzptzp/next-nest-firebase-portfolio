@@ -17,6 +17,13 @@ export class UsersController {
       userImage: "",
       role: "guest",
     });
-    return "";
+
+    try {
+      await this.firebaseService.upsertDoc(userRef, uid, accountData);
+    } catch (error) {
+      console.error(error);
+      throw new Error("Firebaseへのデータの登録・更新に失敗しました。");
+    }
+    return "Firebaseへのデータの登録・更新に成功しました。";
   }
 }
