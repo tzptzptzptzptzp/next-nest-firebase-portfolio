@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { ConfigService } from "@nestjs/config";
+import { FIREBASE_ENV } from "src/config/app.config";
 
 import { auth, storage } from "firebase-admin";
 import { firestore } from "firebase-admin";
@@ -17,17 +17,15 @@ export const envDoc = (): string => {
 
 @Injectable()
 export class FirebaseService {
-  constructor(private configService: ConfigService) {
+  constructor() {
     if (!admin.apps.length) {
       admin.initializeApp({
         credential: admin.credential.cert({
-          projectId: this.configService.get("FIREBASE_PROJECT_ID"),
-          clientEmail: this.configService.get("FIREBASE_CLIENT_EMAIL"),
-          privateKey: this.configService
-            .get("FIREBASE_PRIVATE_KEY")
-            .replace(/\\n/g, "\n"),
+          projectId: FIREBASE_ENV.FIREBASE_PROJECT_ID,
+          clientEmail: FIREBASE_ENV.FIREBASE_CLIENT_EMAIL,
+          privateKey: FIREBASE_ENV.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
         }),
-        storageBucket: this.configService.get("FIREBASE_STORAGE_BUCKET"),
+        storageBucket: FIREBASE_ENV.FIREBASE_STORAGE_BUCKET,
       });
       admin.firestore().settings({ ignoreUndefinedProperties: true });
     }
@@ -71,5 +69,22 @@ export class FirebaseService {
       .collection(API_VERSION)
       .doc(envDoc())
       .collection(collectionName);
+  }
+
+  /**
+   * FirestoreDocument 登録・更新
+   * @param collectionRef: コレクションリファレンス
+   * @param docId: ドキュメントID
+   * @param data: 登録データ
+   */
+  async upsertDoc(
+    collectionRef: FirebaseFirestore.CollectionReference<FirebaseFirestore.DocumentData>,
+    docId: string,
+    data: unknown
+  ): Promise<firestore.WriteResult> {
+    const res = await collectionRef
+      .doc(docId)
+      .set(Object.assign({}, data), { merge: true });
+    return res;
   }
 }
