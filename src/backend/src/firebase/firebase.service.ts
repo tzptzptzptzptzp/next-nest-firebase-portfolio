@@ -30,6 +30,8 @@ export class FirebaseService {
       admin.firestore().settings({ ignoreUndefinedProperties: true });
     }
     this.auth = admin.auth();
+    this.firestore = admin.firestore();
+    this.storage = admin.storage();
   }
 
   private readonly auth: auth.Auth;
