@@ -1,17 +1,23 @@
-import { IsIn, IsString, Length } from "class-validator";
+import { IsEmail, IsIn, IsString, Length } from "class-validator";
 
 export type User = {
+  email: string;
   userName: string;
   userImage: string;
   role: "admin" | "guest";
 };
 
 export class UsersEntity {
-  constructor({ userName, userImage, role }: User) {
+  constructor({ email, userName, userImage, role }: User) {
+    this.email = email;
     this.userName = userName;
     this.userImage = userImage;
     this.role = role;
   }
+
+  @IsString()
+  @IsEmail()
+  email: string;
 
   @Length(1, 20)
   userName: string;
