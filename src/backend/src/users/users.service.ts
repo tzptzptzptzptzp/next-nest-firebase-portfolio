@@ -12,6 +12,7 @@ export class UsersService {
   async createUserData(uid: string, email: string): Promise<string> {
     const userRef = await this.firebaseService.getCollectionRef("users");
     const accountData = new UsersEntity({
+      email: email,
       userName: "",
       userImage: "",
       role: "guest",
