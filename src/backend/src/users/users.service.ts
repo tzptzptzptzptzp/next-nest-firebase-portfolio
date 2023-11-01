@@ -7,7 +7,9 @@ export class UsersService {
   constructor(private readonly firebaseService: FirebaseService) {}
 
   /**
-   * サインアップ時に実行されるユーザー作成関数
+   * ユーザーデータ作成関数
+   * @param uid
+   * @param email
    */
   async createUserData(uid: string, email: string): Promise<string> {
     const userRef = await this.firebaseService.getCollectionRef("users");
