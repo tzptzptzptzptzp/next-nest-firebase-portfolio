@@ -1,17 +1,19 @@
 "use client"
+import { useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { Form } from '@/components/ui/Form'
 import { FormTextInput } from '@/components/ui/Form/FormTextInput'
 
+import axios from 'axios'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../../firebase'
-
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
+import { API_URL } from '@/data/apiUrl'
+
 import { signUpType, UserSchema } from '@/schema/user'
-import { useState } from 'react'
 
 export default function SignUp() {
   const [error, setError] = useState<null | string>()
@@ -23,13 +25,18 @@ export default function SignUp() {
     resolver: zodResolver(UserSchema.signUpSchema)
   })
 
-  const handleSubmitForm = (reqBody: signUpType) => {
-    createUserWithEmailAndPassword(auth, reqBody.email, reqBody.password)
-      .then((userCredential) => {
-        const user = userCredential.user
-        console.log(user);
-      })
-      .catch((error) => {
+  const handleSubmitForm = async (reqBody: signUpType) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, reqBody.email, reqBody.password)
+      const user = userCredential.user
+      const apiUrl = `http://localhost:8080${API_URL.createUser}`
+      const postData = {
+        uid: user.uid,
+        email: reqBody.email,
+      }
+      await axios.post(apiUrl, postData)
+    } catch (error: unknown) {
+      if (typeof error === 'object' && error !== null && 'code' in error && 'message' in error) {
         const errorCode = error.code
         switch (errorCode) {
           case 'auth/email-already-in-use':
@@ -40,7 +47,8 @@ export default function SignUp() {
             break
         }
         console.log(errorCode, error.message);
-      })
+      }
+    }
   }
 
   return (
