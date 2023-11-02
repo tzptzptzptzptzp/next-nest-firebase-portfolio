@@ -1,21 +1,24 @@
 "use client"
+
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { ToastContainer } from 'react-toastify'
 
 import { Button } from '@/components/ui/Button'
 import { Form } from '@/components/ui/Form'
 import { FormTextInput } from '@/components/ui/Form/FormTextInput'
 
-import axios from 'axios'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '../../../firebase'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-
-import { API_URL } from '@/data/apiUrl'
+import { userSignUp } from '@/utils/authentication'
 
 import { signUpType, UserSchema } from '@/schema/user'
 
+import 'react-toastify/dist/ReactToastify.css'
+
 export default function SignUp() {
+  const router = useRouter()
   const [error, setError] = useState<null | string>()
   const defaultValues = UserSchema.defaultValues
 
@@ -27,32 +30,16 @@ export default function SignUp() {
 
   const handleSubmitForm = async (reqBody: signUpType) => {
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, reqBody.email, reqBody.password)
-      const user = userCredential.user
-      const apiUrl = `http://localhost:8080${API_URL.createUser}`
-      const postData = {
-        uid: user.uid,
-        email: reqBody.email,
-      }
-      await axios.post(apiUrl, postData)
-    } catch (error: unknown) {
-      if (typeof error === 'object' && error !== null && 'code' in error && 'message' in error) {
-        const errorCode = error.code
-        switch (errorCode) {
-          case 'auth/email-already-in-use':
-            setError('既に登録されているメールアドレスです')
-            break
-          default:
-            setError('不明なエラーが発生しました')
-            break
-        }
-        console.log(errorCode, error.message);
-      }
+      await userSignUp(reqBody.email, reqBody.password, setError)
+      router.push('/')
+    } catch (error) {
+
     }
   }
 
   return (
     <>
+      <ToastContainer />
       <main className="flex-center relative centering-x w-screen h-screen">
         <div className="relative w-1/3 h-auto p-16 rounded-3xl color-bg">
           <Form className='flex flex-col gap-8' onSubmit={handleSubmit(handleSubmitForm)}>
