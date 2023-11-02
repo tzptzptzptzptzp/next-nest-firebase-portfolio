@@ -23,7 +23,7 @@ export const userSignUp = async (
       email,
     };
     await axios.post(apiUrl, postData);
-    notification("success", "ユーザー登録が完了しました");
+    notification("success", "ユーザー登録が完了しました", 3000, true);
   } catch (error: unknown) {
     if (
       typeof error === "object" &&
