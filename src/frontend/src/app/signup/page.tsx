@@ -1,8 +1,10 @@
 "use client"
+
 import { useState } from 'react'
 
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { ToastContainer } from 'react-toastify'
 
 import { Button } from '@/components/ui/Button'
 import { Form } from '@/components/ui/Form'
@@ -11,6 +13,8 @@ import { FormTextInput } from '@/components/ui/Form/FormTextInput'
 import { userSignUp } from '@/utils/authentication'
 
 import { signUpType, UserSchema } from '@/schema/user'
+
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function SignUp() {
   const [error, setError] = useState<null | string>()
@@ -23,11 +27,16 @@ export default function SignUp() {
   })
 
   const handleSubmitForm = async (reqBody: signUpType) => {
-    userSignUp(reqBody.email, reqBody.password, setError)
+    try {
+      await userSignUp(reqBody.email, reqBody.password, setError)
+    } catch (error) {
+
+    }
   }
 
   return (
     <>
+      <ToastContainer />
       <main className="flex-center relative centering-x w-screen h-screen">
         <div className="relative w-1/3 h-auto p-16 rounded-3xl color-bg">
           <Form className='flex flex-col gap-8' onSubmit={handleSubmit(handleSubmitForm)}>
