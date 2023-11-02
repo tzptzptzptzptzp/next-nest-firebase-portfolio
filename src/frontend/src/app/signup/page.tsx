@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation'
 
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { ToastContainer } from 'react-toastify'
 
 import { Button } from '@/components/ui/Button'
 import { Form } from '@/components/ui/Form'
@@ -39,7 +38,6 @@ export default function SignUp() {
 
   return (
     <>
-      <ToastContainer />
       <main className="flex-center relative centering-x w-screen h-screen">
         <div className="relative w-1/3 h-auto p-16 rounded-3xl color-bg">
           <Form className='flex flex-col gap-8' onSubmit={handleSubmit(handleSubmitForm)}>
