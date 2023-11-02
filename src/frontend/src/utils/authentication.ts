@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 
 import { API_URL } from "@/data/apiUrl";
+import { notification } from "./notification";
 
 export const userSignUp = async (
   email: string,
@@ -22,6 +23,7 @@ export const userSignUp = async (
       email,
     };
     await axios.post(apiUrl, postData);
+    notification("success", "ユーザー登録が完了しました");
   } catch (error: unknown) {
     if (
       typeof error === "object" &&
@@ -33,12 +35,15 @@ export const userSignUp = async (
       switch (errorCode) {
         case "auth/email-already-in-use":
           setError("既に登録されているメールアドレスです");
+          notification("error", "既に登録されているメールアドレスです");
           break;
         case "auth/invalid-email":
           setError("メールアドレスの形式が正しくありません");
+          notification("error", "メールアドレスの形式が正しくありません");
           break;
         default:
           setError("不明なエラーが発生しました");
+          notification("error", "不明なエラーが発生しました");
           break;
       }
       console.log(errorCode, error.message);
