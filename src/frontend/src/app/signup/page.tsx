@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -17,6 +18,7 @@ import { signUpType, UserSchema } from '@/schema/user'
 import 'react-toastify/dist/ReactToastify.css'
 
 export default function SignUp() {
+  const router = useRouter()
   const [error, setError] = useState<null | string>()
   const defaultValues = UserSchema.defaultValues
 
@@ -29,6 +31,7 @@ export default function SignUp() {
   const handleSubmitForm = async (reqBody: signUpType) => {
     try {
       await userSignUp(reqBody.email, reqBody.password, setError)
+      router.push('/')
     } catch (error) {
 
     }
