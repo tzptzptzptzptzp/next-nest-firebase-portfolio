@@ -48,5 +48,6 @@ export const userSignUp = async (
       }
       console.log(errorCode, error.message);
     }
+    throw error;
   }
 };
