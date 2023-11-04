@@ -1,8 +1,12 @@
-import { ReactNode } from "react";
+export type FullScreenContainerType = {
+  children: React.ReactNode;
+  position?: "center" | "start" | "end";
+  width?: string;
+};
 
 export type TextType = {
   bold?: boolean;
-  children?: ReactNode;
+  children?: React.ReactNode;
   color?: string;
   size?: string;
   style?: string;

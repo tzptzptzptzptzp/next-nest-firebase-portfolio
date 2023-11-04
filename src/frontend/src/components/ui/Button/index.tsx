@@ -27,7 +27,7 @@ export const Button = ({
   return (
     <>
       <button
-        className={`px-6 pt-2 pb-4 duration-200 ${bg} ${className} ${styles.button}`}
+        className={`px-6 py-3 duration-200 ${bg} ${className} ${styles.button}`}
         disabled={disabled}
         ref={ref}
         type={type}
