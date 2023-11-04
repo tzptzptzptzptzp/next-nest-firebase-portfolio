@@ -16,10 +16,12 @@ import { userSignUp } from '@/utils/authentication'
 import { signUpType, UserSchema } from '@/schema/user'
 
 import 'react-toastify/dist/ReactToastify.css'
+import { useAppSelector } from '@/redux/hooks'
 
 export default function SignUp() {
   const router = useRouter()
   const [error, setError] = useState<null | string>()
+  const currentLang = useAppSelector((state) => state.lang.value)
   const defaultValues = UserSchema.defaultValues
 
   const { control, handleSubmit, reset } = useForm({
@@ -44,14 +46,14 @@ export default function SignUp() {
           <FormTextInput
             control={control}
             isRequired
-            label={'ユーザー名'}
+            label={currentLang === 'en' ? 'UserName' : 'ユーザー名'}
             maxLength={20}
             name={'userName'}
           />
           <FormTextInput
             control={control}
             isRequired
-            label={'メールアドレス'}
+            label={currentLang === 'en' ? 'Email Address' : 'メールアドレス'}
             maxLength={100}
             name={'email'}
             type='email'
@@ -59,7 +61,7 @@ export default function SignUp() {
           <FormTextInput
             control={control}
             isRequired
-            label={'パスワード'}
+            label={currentLang === 'en' ? 'Password' : 'パスワード'}
             maxLength={100}
             name={'password'}
             type='password'
@@ -67,7 +69,7 @@ export default function SignUp() {
           <FormTextInput
             control={control}
             isRequired
-            label={'パスワード(確認)'}
+            label={currentLang === 'en' ? 'Confirm Password' : 'パスワード(確認)'}
             maxLength={100}
             name={'confirmPassword'}
             type='password'
@@ -79,7 +81,7 @@ export default function SignUp() {
           }
           <div className='flex-center w-full'>
             <Button
-              text={'SingUp'}
+              text={currentLang === 'en' ? 'SignUp' : 'サインアップ'}
               type={'submit'}
             />
           </div>
