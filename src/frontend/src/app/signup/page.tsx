@@ -17,6 +17,7 @@ import { signUpType, UserSchema } from '@/schema/user'
 
 import 'react-toastify/dist/ReactToastify.css'
 import { useAppSelector } from '@/redux/hooks'
+import Link from 'next/link'
 
 export default function SignUp() {
   const router = useRouter()
@@ -41,7 +42,7 @@ export default function SignUp() {
 
   return (
     <FullScreenContainer>
-      <main className="relative h-auto p-16 rounded-3xl color-bg">
+      <main className="relative h-auto px-16 py-12 rounded-3xl color-bg">
         <Form className='flex flex-col gap-8' onSubmit={handleSubmit(handleSubmitForm)}>
           <FormTextInput
             control={control}
@@ -84,6 +85,14 @@ export default function SignUp() {
               text={currentLang === 'en' ? 'SignUp' : 'サインアップ'}
               type={'submit'}
             />
+          </div>
+          <div className='flex-center gap-6 text-xl underline'>
+            <Link href='/'>
+              {currentLang === 'en' ? 'TopPage' : 'トップへ'}
+            </Link>
+            <Link href='/login'>
+              {currentLang === 'en' ? 'LogInPage' : 'ログイン'}
+            </Link>
           </div>
         </Form>
       </main>
