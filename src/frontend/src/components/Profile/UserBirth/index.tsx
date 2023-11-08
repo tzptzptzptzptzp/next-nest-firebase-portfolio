@@ -5,11 +5,9 @@ import { dateType } from "@/types/data.type"
 
 export const UserBirth = ({ data }: { data: dateType["birth"] }) => {
   return (
-    <>
-      <div className="flex-center gap-1">
-        <FontAwesomeIcon icon={faCakeCandles} height={'1em'} />
-        <p>{data}</p>
-      </div>
-    </>
+    <div className="flex-center gap-1">
+      <FontAwesomeIcon icon={faCakeCandles} height={'1em'} />
+      <p>{data}</p>
+    </div>
   )
 }
