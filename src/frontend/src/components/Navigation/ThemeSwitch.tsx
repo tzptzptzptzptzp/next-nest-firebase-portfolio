@@ -20,18 +20,16 @@ export const ThemeSwitch = () => {
     }
   }
   return (
-    <>
-      <button onClick={() => handleClick(isTheme)} className="w-[4.5rem] h-[4.5rem]">
-        {isTheme === '' ? (
-          <MoonIcon />
-        ) : null}
-        {isTheme === 'light' ? (
-          <MoonIcon />
-        ) : null}
-        {isTheme === 'dark' ? (
-          <SunIcon />
-        ) : null}
-      </button>
-    </>
+    <button onClick={() => handleClick(isTheme)} className="w-[4.5rem] h-[4.5rem]">
+      {isTheme === '' ? (
+        <MoonIcon />
+      ) : null}
+      {isTheme === 'light' ? (
+        <MoonIcon />
+      ) : null}
+      {isTheme === 'dark' ? (
+        <SunIcon />
+      ) : null}
+    </button>
   )
 }
