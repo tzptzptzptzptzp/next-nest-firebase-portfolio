@@ -45,35 +45,33 @@ export const FormTextInput = <T extends FieldValues>({
   const errorStyle = ''
   const labelStyle = ''
   return (
-    <>
-      <FormElement
-        containerStyle={containerStyle}
-        control={control as Control<FieldValues, unknown>}
-        errorOff={errorOff}
-        errorStyle={errorStyle}
-        formStyle={formStyle}
-        isRequired={isRequired}
-        label={label}
-        labelStyle={labelStyle}
-        name={name}
-      >
-        <div>
-          <TextInput
-            autoComplete={autoComplete}
-            className={style}
-            {...control.register(name)}
-            disabled={disabled}
-            error={error}
-            isError={isError}
-            name={name}
-            onChange={handleChange}
-            placeholder={placeholder}
-            type={type}
-            value={String(field.value)}
-            width='100%'
-          />
-        </div>
-      </FormElement>
-    </>
+    <FormElement
+      containerStyle={containerStyle}
+      control={control as Control<FieldValues, unknown>}
+      errorOff={errorOff}
+      errorStyle={errorStyle}
+      formStyle={formStyle}
+      isRequired={isRequired}
+      label={label}
+      labelStyle={labelStyle}
+      name={name}
+    >
+      <div>
+        <TextInput
+          autoComplete={autoComplete}
+          className={style}
+          {...control.register(name)}
+          disabled={disabled}
+          error={error}
+          isError={isError}
+          name={name}
+          onChange={handleChange}
+          placeholder={placeholder}
+          type={type}
+          value={String(field.value)}
+          width='100%'
+        />
+      </div>
+    </FormElement>
   )
 }

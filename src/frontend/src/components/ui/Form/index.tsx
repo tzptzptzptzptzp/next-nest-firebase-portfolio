@@ -12,19 +12,17 @@ export const Form = ({
   onSubmit
 }: Props) => {
   return (
-    <>
-      <form
-        className={`${className}`}
-        noValidate
-        onClick={onClick}
-        onSubmit={(e) => {
-          onSubmit(e)
-          e.preventDefault()
-          return false
-        }}
-      >
-        {children}
-      </form>
-    </>
+    <form
+      className={`${className}`}
+      noValidate
+      onClick={onClick}
+      onSubmit={(e) => {
+        onSubmit(e)
+        e.preventDefault()
+        return false
+      }}
+    >
+      {children}
+    </form>
   )
 }
