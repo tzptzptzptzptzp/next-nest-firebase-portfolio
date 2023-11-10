@@ -25,16 +25,14 @@ export const Button = ({
   ...props
 }: Props) => {
   return (
-    <>
-      <button
-        className={`px-6 py-3 duration-200 ${bg} ${className} ${styles.button}`}
-        disabled={disabled}
-        ref={ref}
-        type={type}
-        {...props}
-      >
-        {children ? children : text}
-      </button>
-    </>
+    <button
+      className={`px-6 py-3 duration-200 ${bg} ${className} ${styles.button}`}
+      disabled={disabled}
+      ref={ref}
+      type={type}
+      {...props}
+    >
+      {children ? children : text}
+    </button>
   )
 }
