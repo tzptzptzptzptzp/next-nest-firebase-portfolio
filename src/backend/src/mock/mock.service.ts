@@ -1,9 +1,9 @@
 import { Injectable } from "@nestjs/common";
-import { data } from "../../../frontend/src/mock/data";
+import { mockData } from "./data/mockData";
 
 @Injectable()
 export class MockService {
   getMockData() {
-    return data;
+    return mockData;
   }
 }
