@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { initialData } from "../initialData";
+import { initialData } from "../data/initialData";
 
 export const dataSlice = createSlice({
   name: "data",
