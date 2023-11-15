@@ -1,0 +1,92 @@
+import { dataType } from "@/types/data.type";
+
+export const initialData: dataType = {
+  profile: {
+    name: {
+      en: "",
+      ja: "",
+    },
+    nickname: "",
+    occupation: {
+      en: "",
+      ja: "",
+    },
+    date: {
+      birth: "",
+      engineering: "",
+    },
+    sns: {
+      github: "",
+      x: "",
+      instagram: "",
+    },
+    link: [""],
+  },
+  content: {
+    aboutMeData: {
+      en: "",
+      ja: "",
+    },
+    favoriteData: [""],
+    enhancingData: [""],
+    skillData: [
+      {
+        sectionTitle: "",
+        skillSet: [
+          {
+            icon: "",
+            name: "",
+            rate: 3,
+          },
+        ],
+      },
+    ],
+    projectData: [
+      {
+        title: {
+          en: "",
+          ja: "",
+        },
+        description: {
+          en: "",
+          ja: "",
+        },
+        technology: [""],
+        completion_date: "",
+      },
+    ],
+    portfolioData: [
+      {
+        name: {
+          en: "",
+          ja: "",
+        },
+        description: {
+          en: "",
+          ja: "",
+        },
+        link: "",
+        technology: [""],
+      },
+    ],
+    careerData: [
+      {
+        name: {
+          en: "",
+          ja: "",
+        },
+        description: {
+          en: "",
+          ja: "",
+        },
+        join: "",
+        leave: "",
+        link: "",
+      },
+    ],
+    experienceData: {
+      technology: "",
+      application: "",
+    },
+  },
+};
