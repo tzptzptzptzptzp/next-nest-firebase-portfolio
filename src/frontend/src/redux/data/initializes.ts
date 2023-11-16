@@ -1,4 +1,6 @@
-export const initialData = {
+import { dataType } from "@/types/data.type";
+
+export const initialData: dataType = {
   profile: {
     name: {
       en: "",
