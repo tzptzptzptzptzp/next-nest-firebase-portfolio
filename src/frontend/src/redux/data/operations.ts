@@ -1,19 +1,13 @@
+import axios from "axios";
+import { fetchDataFailure, fetchDataStart, fetchDataSuccess } from "./slices";
 import { Dispatch } from "@reduxjs/toolkit";
-import {
-  fetchAllDataFailure,
-  fetchAllDataRequest,
-  fetchAllDataSuccess,
-} from "./actions";
-import { getAllData } from "@/utils/api";
 
-export const fetchAllData = () => {
-  return async (dispatch: Dispatch) => {
-    dispatch(fetchAllDataRequest());
-    try {
-      const res = await getAllData();
-      dispatch(fetchAllDataSuccess(res.data));
-    } catch (err) {
-      dispatch(fetchAllDataFailure(err));
-    }
-  };
+export const fetchData = () => async (dispatch: Dispatch) => {
+  dispatch(fetchDataStart());
+  try {
+    const res = await axios.get("localhost:8080/mock");
+    dispatch(fetchDataSuccess(res.data));
+  } catch (err) {
+    dispatch(fetchDataFailure());
+  }
 };
