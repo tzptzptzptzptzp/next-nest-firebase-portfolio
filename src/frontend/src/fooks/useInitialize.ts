@@ -1,9 +1,8 @@
+import { useEffect } from "react";
+
 import { useAppDispatch } from "@/redux/hooks";
 import { toggleTheme } from "@/redux/slice/themeSlice";
-import { fetchData } from "@/redux/slice/dataSlice";
-
-import { data as mockData } from "@/mock/data";
-import { useEffect } from "react";
+import { fetchAllData } from "@/redux/data/operations";
 
 export const useInitialize = () => {
   const dispatch = useAppDispatch();
@@ -29,7 +28,7 @@ export const useInitialize = () => {
       dispatch(toggleTheme(currentColorMode));
     };
     setInitialColorMode();
-    dispatch(fetchData(mockData));
+    dispatch(fetchAllData());
   }, []);
 };
 
