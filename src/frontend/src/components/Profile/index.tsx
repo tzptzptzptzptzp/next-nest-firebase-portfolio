@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react"
+
 import { UserIcon } from "./UserIcon"
 import { UserName } from "./UserName"
 import { UserJob } from "./UserJob"
@@ -5,10 +7,17 @@ import { UserBirth } from "./UserBirth"
 import { UserEngineering } from "./UserEngineering"
 import { SnsLinks } from "../SnsLinks"
 
+import { useAppSelector } from "@/redux/hooks"
+
 import { profileType } from "@/types/data.type"
 
 export const Profile = ({ data }: { data: profileType }) => {
+  const [loading, setLoading] = useState(true)
+  const isLoading = useAppSelector((state) => state.data.loading)
 
+  useEffect(() => {
+    if (!isLoading) setLoading(false)
+  }, [isLoading])
   return (
     <div className='relative top-0 left-0 w-1/4 h-full color-main'>
       <div className="flex-center flex-col gap-3 w-full h-full">
