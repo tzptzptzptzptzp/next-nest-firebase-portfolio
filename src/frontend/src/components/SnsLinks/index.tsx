@@ -3,23 +3,37 @@ import { faLink } from "@fortawesome/free-solid-svg-icons"
 import { faGithub, faInstagram, faXTwitter } from "@fortawesome/free-brands-svg-icons"
 
 import { linksType } from "@/types/data.type"
+import { Skeleton } from "../molecules/Skeleton"
 
-export const SnsLinks = ({ data }: { data: linksType }) => {
+type Props = {
+  data: linksType
+  loading?: boolean
+}
+
+export const SnsLinks = ({ data, loading = false }: Props) => {
   return (
     <div className="flex-center gap-4 text-[1.8rem]">
-      <a href={`https://twitter.com/${data.sns.x}`}>
-        <FontAwesomeIcon icon={faXTwitter} width={'1em'} />
-      </a>
-      <a href={`https://www.instagram.com/${data.sns.instagram}`}>
-        <FontAwesomeIcon icon={faInstagram} width={'1em'} />
-      </a>
-      <a href={`https://github.com/${data.sns.instagram}`}>
-        <FontAwesomeIcon icon={faGithub} width={'1em'} />
-      </a>
-      {data.link.map((item, i) => (
-        <a key={i} href={item}>
-          <FontAwesomeIcon icon={faLink} width={'1em'} />
+      <Skeleton circle isLoading={loading} width={20} height={20}>
+        <a href={`https://twitter.com/${data.sns.x}`}>
+          <FontAwesomeIcon icon={faXTwitter} width={'1em'} />
         </a>
+      </Skeleton>
+      <Skeleton circle isLoading={loading} width={20} height={20}>
+        <a href={`https://www.instagram.com/${data.sns.instagram}`}>
+          <FontAwesomeIcon icon={faInstagram} width={'1em'} />
+        </a>
+      </Skeleton>
+      <Skeleton circle isLoading={loading} width={20} height={20}>
+        <a href={`https://github.com/${data.sns.instagram}`}>
+          <FontAwesomeIcon icon={faGithub} width={'1em'} />
+        </a>
+      </Skeleton>
+      {data.link.map((item, i) => (
+        <Skeleton circle isLoading={loading} key={i} width={20} height={20}>
+          <a href={item}>
+            <FontAwesomeIcon icon={faLink} width={'1em'} />
+          </a>
+        </Skeleton>
       ))}
     </div>
   )
