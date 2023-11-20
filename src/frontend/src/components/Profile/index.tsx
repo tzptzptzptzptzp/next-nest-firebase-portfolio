@@ -22,13 +22,13 @@ export const Profile = ({ data }: { data: profileType }) => {
     <div className='relative top-0 left-0 w-1/4 h-full color-main'>
       <div className="flex-center flex-col gap-3 w-full h-full">
         <UserIcon />
-        <UserName data={{ name: data.name, nickname: data.nickname }} />
-        <UserJob data={data.occupation} />
+        <UserName data={{ name: data.name, nickname: data.nickname }} loading={loading} />
+        <UserJob data={data.occupation} loading={loading} />
         <div className="flex-center gap-8">
-          <UserBirth data={data.date.birth} />
-          <UserEngineering data={data.date.engineering} />
+          <UserBirth data={data.date.birth} loading={loading} />
+          <UserEngineering data={data.date.engineering} loading={loading} />
         </div>
-        <SnsLinks data={{ sns: data.sns, link: data.link }} />
+        <SnsLinks data={{ sns: data.sns, link: data.link }} loading={loading} />
       </div>
     </div>
   )
