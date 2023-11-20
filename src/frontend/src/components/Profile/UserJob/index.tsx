@@ -1,12 +1,20 @@
+import { Skeleton } from "@/components/molecules/Skeleton"
 import { useAppSelector } from "@/redux/hooks"
 
 import { occupationType } from "@/types/data.type"
 
-export const UserJob = ({ data }: { data: occupationType }) => {
+type Props = {
+  data: occupationType
+  loading?: boolean
+}
+
+export const UserJob = ({ data, loading = false }: Props) => {
   const currentLang = useAppSelector((state) => state.lang.value)
   return (
     <div className="text-center">
-      <p className="text-[1.8rem]" dangerouslySetInnerHTML={{ __html: currentLang === 'en' ? data.en : data.ja }}></p>
+      <Skeleton isLoading={loading}>
+        <p className="text-[1.8rem]" dangerouslySetInnerHTML={{ __html: currentLang === 'en' ? data.en : data.ja }}></p>
+      </Skeleton>
     </div>
   )
 }
