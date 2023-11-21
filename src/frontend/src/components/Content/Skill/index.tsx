@@ -6,13 +6,11 @@ import { skillType } from "@/types/data.type"
 
 export const Skill = ({ data }: { data: skillType }) => {
   return (
-    <>
-      <div className="flex flex-col gap-8">
-        <ContentTitle icon={faWandSparkles} title={'Skill'} />
-        {data.map((skills, i) => (
-          <SkillSection key={i} skills={skills} />
-        ))}
-      </div>
-    </>
+    <div className="flex flex-col gap-8">
+      <ContentTitle icon={faWandSparkles} title={'Skill'} />
+      {data.map((skills, i) => (
+        <SkillSection key={i} skills={skills} />
+      ))}
+    </div>
   )
 }

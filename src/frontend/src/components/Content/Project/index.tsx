@@ -9,22 +9,20 @@ export const Project = ({ data }: { data: projectType }) => {
   const oddIndexProjects = ascOrderData.filter((_, index) => index % 2 !== 1);
   const evenIndexProjects = ascOrderData.filter((_, index) => index % 2 !== 0);
   return (
-    <>
-      <div className="flex flex-col gap-10">
-        <ContentTitle icon={faFilm} title={'Project'} />
-        <div className="grid grid-cols-2 gap-8">
-          <div className="flex flex-col gap-6">
-            {oddIndexProjects.map((data, i) => (
-              <ProjectBox key={i} data={data} />
-            ))}
-          </div>
-          <div className="flex flex-col gap-6">
-            {evenIndexProjects.map((data, i) => (
-              <ProjectBox key={i} data={data} />
-            ))}
-          </div>
+    <div className="flex flex-col gap-10">
+      <ContentTitle icon={faFilm} title={'Project'} />
+      <div className="grid grid-cols-2 gap-8">
+        <div className="flex flex-col gap-6">
+          {oddIndexProjects.map((data, i) => (
+            <ProjectBox key={i} data={data} />
+          ))}
+        </div>
+        <div className="flex flex-col gap-6">
+          {evenIndexProjects.map((data, i) => (
+            <ProjectBox key={i} data={data} />
+          ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }
