@@ -1,9 +1,9 @@
+import { Skeleton } from "../../molecules/Skeleton"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLink } from "@fortawesome/free-solid-svg-icons"
 import { faGithub, faInstagram, faXTwitter } from "@fortawesome/free-brands-svg-icons"
 
 import { linksType } from "@/types/data.type"
-import { Skeleton } from "../molecules/Skeleton"
 
 type Props = {
   data: linksType

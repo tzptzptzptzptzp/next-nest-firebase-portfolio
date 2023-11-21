@@ -3,7 +3,7 @@ import { forwardRef } from 'react'
 import { useAppSelector } from '@/redux/hooks'
 
 import { FieldError } from 'react-hook-form'
-import { InputAttributeType, InputType } from '../ui.type'
+import { InputAttributeType, InputType } from '../atoms.type'
 
 export type TextInputType = {
   className?: string
