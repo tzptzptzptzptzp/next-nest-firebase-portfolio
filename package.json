@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "NODE_ENV=develop npm run front & npm run server",
-    "front": "cd src/frontend && next dev",
+    "front": "cd src/frontend && next dev & open-cli http://localhost:3000",
     "server": "cd src/backend && nest start",
     "build": "next build",
     "start": "next start",
