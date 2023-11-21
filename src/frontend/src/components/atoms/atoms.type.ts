@@ -1,4 +1,8 @@
-import { ChangeEventHandler } from "react";
+export type FullScreenContainerType = {
+  children: React.ReactNode;
+  position?: "center" | "start" | "end";
+  width?: string;
+};
 
 export type InputAttributeType =
   | "text"
@@ -21,8 +25,23 @@ export type InputType = {
   label?: string | JSX.Element;
   maxLength?: number;
   name: string;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
   placeholder?: string;
   type?: InputAttributeType;
   value?: string | number | boolean;
+};
+
+export type TextType = {
+  bold?: boolean;
+  children?: React.ReactNode;
+  color?: string;
+  size?: string;
+  style?: string;
+};
+
+export type LabelType = {
+  htmlFor?: string;
+  isRequired?: boolean;
+  style?: string;
+  text: string | JSX.Element;
 };

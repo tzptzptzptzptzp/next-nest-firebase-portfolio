@@ -1,6 +1,6 @@
 import { forwardRef } from "react"
 
-import type { TextType } from "../elements.type"
+import type { TextType } from "../atoms.type"
 
 export const Text = forwardRef<HTMLParagraphElement, TextType>(
   ({

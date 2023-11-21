@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Icon } from "../Icon"
+import { Icon } from "../../Icon"
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons"
 import { faRightToBracket, faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons"
 import { ThemeSwitch } from "./ThemeSwitch"

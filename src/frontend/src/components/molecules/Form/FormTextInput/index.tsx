@@ -1,6 +1,6 @@
 import { useCallback } from "react"
 import { FormElement, FormElementProps } from "../FormElement"
-import { TextInput, TextInputType } from "../../TextInput"
+import { TextInput, TextInputType } from "../../../atoms/TextInput"
 
 import { type FieldValues, useController, Control } from "react-hook-form"
 

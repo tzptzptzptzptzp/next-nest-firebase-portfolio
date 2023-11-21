@@ -6,10 +6,10 @@ import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { FullScreenContainer } from '@/components/elements/FullScreenContainer'
-import { Button } from '@/components/ui/Button'
-import { Form } from '@/components/ui/Form'
-import { FormTextInput } from '@/components/ui/Form/FormTextInput'
+import { FullScreenContainer } from '@/components/templates/FullScreenContainer'
+import { Button } from '@/components/atoms/Button'
+import { Form } from '@/components/molecules/Form'
+import { FormTextInput } from '@/components/molecules/Form/FormTextInput'
 
 import { userSignUp } from '@/utils/authentication'
 

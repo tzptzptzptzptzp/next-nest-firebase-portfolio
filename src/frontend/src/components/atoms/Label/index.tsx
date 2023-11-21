@@ -1,6 +1,6 @@
 import { VFC } from "react";
 
-import type { LabelType } from '../elements.type'
+import type { LabelType } from '../atoms.type'
 
 export const Label: VFC<LabelType> = ({
   htmlFor,

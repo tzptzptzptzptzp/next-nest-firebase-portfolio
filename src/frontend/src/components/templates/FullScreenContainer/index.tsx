@@ -1,4 +1,4 @@
-import { FullScreenContainerType } from "../elements.type"
+import { FullScreenContainerType } from "../../atoms/atoms.type"
 
 export const FullScreenContainer = ({
   children,
