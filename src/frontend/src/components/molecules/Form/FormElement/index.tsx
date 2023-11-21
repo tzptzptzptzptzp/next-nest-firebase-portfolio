@@ -1,6 +1,6 @@
 import { PropsWithChildren, memo } from 'react'
-import { Label } from '@/components/elements/Label'
-import { Text } from '@/components/elements/Text'
+import { Label } from '@/components/atoms/Label'
+import { Text } from '@/components/atoms/Text'
 
 import { type Control, type Path, type FieldErrors, type FieldError, type FieldValues, useController } from 'react-hook-form'
 

@@ -1,7 +1,7 @@
 "use client"
 
-import { SunIcon } from "../Icon/Sun"
-import { MoonIcon } from "../Icon/Moon"
+import { SunIcon } from "../../Icon/Sun"
+import { MoonIcon } from "../../Icon/Moon"
 
 import { useAppDispatch, useAppSelector } from "@/redux/hooks"
 import { toggleTheme } from "@/redux/slice/themeSlice"

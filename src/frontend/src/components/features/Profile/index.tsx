@@ -5,7 +5,7 @@ import { UserName } from "./UserName"
 import { UserJob } from "./UserJob"
 import { UserBirth } from "./UserBirth"
 import { UserEngineering } from "./UserEngineering"
-import { SnsLinks } from "../SnsLinks"
+import { SnsLinks } from "../../organisms/SnsLinks"
 
 import { useAppSelector } from "@/redux/hooks"
 
