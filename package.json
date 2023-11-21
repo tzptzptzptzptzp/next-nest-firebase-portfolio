@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "NODE_ENV=develop npm run front & npm run server",
-    "front": "cd src/frontend && next dev",
+    "front": "cd src/frontend && next dev & open-cli http://localhost:3000",
     "server": "cd src/backend && nest start",
     "build": "next build",
     "start": "next start",
@@ -65,6 +65,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "jest": "^29.5.0",
+    "open-cli": "^7.2.0",
     "prettier": "^3.0.0",
     "source-map-support": "^0.5.21",
     "supertest": "^6.3.3",
