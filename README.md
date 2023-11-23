@@ -1,3 +1,8 @@
+## ディレクトリ設計
+
+- Components - Atomic Design
+- Redux - Re-ducks Pattern
+
 ## ブランチ運用ルール
 
 ![ブランチ運用ルール](./_readme/branch_operation_rules.jpg)
@@ -17,6 +22,11 @@ nest g s [name] // サービス作成コマンド
 ```
 
 ---
+
+## Directory Design
+
+- Components - Atomic Design
+- Redux - Re-ducks Pattern
 
 ## Branch Operation Rules
 
