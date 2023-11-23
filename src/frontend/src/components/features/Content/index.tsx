@@ -10,7 +10,7 @@ import { Portfolio } from "./Portfolio"
 import { Career } from "./Career"
 import { Experience } from "./Experience"
 
-import { useAppSelector } from "@/redux/hooks"
+import { useAppSelector } from "@/reducks/hooks"
 
 import { contentType } from "@/types/data.type"
 import { pageContentType } from "@/types/content.type"

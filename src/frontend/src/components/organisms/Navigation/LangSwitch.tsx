@@ -1,7 +1,7 @@
 "use client"
 
-import { useAppDispatch, useAppSelector } from "@/redux/hooks"
-import { toggleLang } from "@/redux/slice/langSlice"
+import { useAppDispatch, useAppSelector } from "@/reducks/hooks"
+import { toggleLang } from "@/reducks/slice/langSlice"
 
 export const LangSwitch = () => {
   const isLang = useAppSelector((state) => state.lang.value)

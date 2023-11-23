@@ -3,8 +3,8 @@
 import { SunIcon } from "../../Icon/Sun"
 import { MoonIcon } from "../../Icon/Moon"
 
-import { useAppDispatch, useAppSelector } from "@/redux/hooks"
-import { toggleTheme } from "@/redux/slice/themeSlice"
+import { useAppDispatch, useAppSelector } from "@/reducks/hooks"
+import { toggleTheme } from "@/reducks/slice/themeSlice"
 
 export const ThemeSwitch = () => {
   const isTheme = useAppSelector((state) => state.theme.value)

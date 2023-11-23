@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 
-import { useAppDispatch } from "@/redux/hooks";
-import { toggleTheme } from "@/redux/slice/themeSlice";
-import { fetchAllData } from "@/redux/data/operations";
+import { useAppDispatch } from "@/reducks/hooks";
+import { toggleTheme } from "@/reducks/slice/themeSlice";
+import { fetchAllData } from "@/reducks/data/operations";
 
 export const useInitialize = () => {
   const dispatch = useAppDispatch();

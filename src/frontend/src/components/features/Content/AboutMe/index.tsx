@@ -2,7 +2,7 @@ import { ContentTitle } from "../Title"
 import { Skeleton } from "@/components/molecules/Skeleton"
 import { faAddressCard } from "@fortawesome/free-regular-svg-icons"
 
-import { useAppSelector } from "@/redux/hooks"
+import { useAppSelector } from "@/reducks/hooks"
 
 import { aboutMeType } from "@/types/data.type"
 

@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import { Zen_Maru_Gothic } from 'next/font/google'
 
-import { useAppSelector } from '@/redux/hooks'
+import { useAppSelector } from '@/reducks/hooks'
 import useInitialize from '@/fooks/useInitialize'
 
 import { ToastContainer } from 'react-toastify'

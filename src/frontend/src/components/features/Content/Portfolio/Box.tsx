@@ -2,7 +2,7 @@ import { Icon } from "@/components/Icon"
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons"
 import { faArrowUpRightFromSquare, faWrench } from "@fortawesome/free-solid-svg-icons"
 
-import { useAppSelector } from "@/redux/hooks"
+import { useAppSelector } from "@/reducks/hooks"
 
 import { portfolioItemType } from "@/types/data.type"
 

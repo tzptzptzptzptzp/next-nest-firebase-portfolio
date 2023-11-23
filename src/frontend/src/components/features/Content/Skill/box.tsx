@@ -2,7 +2,7 @@ import { Icon } from "@/components/Icon"
 import { faIcons, faStar } from "@fortawesome/free-solid-svg-icons"
 import { faStar as outline } from "@fortawesome/free-regular-svg-icons"
 
-import { useAppSelector } from "@/redux/hooks"
+import { useAppSelector } from "@/reducks/hooks"
 
 import { skillSetType } from "@/types/data.type"
 
