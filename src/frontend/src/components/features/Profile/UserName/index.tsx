@@ -1,6 +1,6 @@
 import { Skeleton } from "@/components/molecules/Skeleton"
 
-import { useAppSelector } from "@/redux/hooks"
+import { useAppSelector } from "@/reducks/hooks"
 
 import { nameType } from "@/types/data.type"
 

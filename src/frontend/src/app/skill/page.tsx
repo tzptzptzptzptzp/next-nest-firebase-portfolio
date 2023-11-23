@@ -4,7 +4,7 @@ import { Content } from '@/components/features/Content'
 import { Header } from '@/components/organisms/Header'
 import { Profile } from '@/components/features/Profile'
 
-import { useAppSelector } from "@/redux/hooks"
+import { useAppSelector } from "@/reducks/hooks"
 
 import { SkillContent as content } from '@/data/content'
 

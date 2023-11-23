@@ -7,7 +7,7 @@ import { UserBirth } from "./UserBirth"
 import { UserEngineering } from "./UserEngineering"
 import { SnsLinks } from "../../organisms/SnsLinks"
 
-import { useAppSelector } from "@/redux/hooks"
+import { useAppSelector } from "@/reducks/hooks"
 
 import { profileType } from "@/types/data.type"
 

@@ -1,7 +1,7 @@
 import { Icon } from "@/components/Icon"
 import { faWrench } from "@fortawesome/free-solid-svg-icons"
 
-import { useAppSelector } from "@/redux/hooks"
+import { useAppSelector } from "@/reducks/hooks"
 
 import { projectItemType } from "@/types/data.type"
 

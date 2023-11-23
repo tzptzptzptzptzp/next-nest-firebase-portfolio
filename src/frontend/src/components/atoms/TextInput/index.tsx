@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 
-import { useAppSelector } from '@/redux/hooks'
+import { useAppSelector } from '@/reducks/hooks'
 
 import { FieldError } from 'react-hook-form'
 import { InputAttributeType, InputType } from '../atoms.type'

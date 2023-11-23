@@ -1,5 +1,5 @@
 import { Skeleton } from "@/components/molecules/Skeleton"
-import { useAppSelector } from "@/redux/hooks"
+import { useAppSelector } from "@/reducks/hooks"
 
 import { occupationType } from "@/types/data.type"
 
