@@ -3,7 +3,7 @@
 import { ContentTitle } from "../Title"
 import { faGithubAlt } from "@fortawesome/free-brands-svg-icons"
 
-import { useAppSelector } from "@/redux/hooks"
+import { useAppSelector } from "@/reducks/hooks"
 
 export const GitHubStatus = () => {
   const isTheme = useAppSelector((state) => state.theme.value)

@@ -2,7 +2,7 @@ import { Icon } from "@/components/Icon"
 import { faBuilding, faCalendar } from "@fortawesome/free-regular-svg-icons"
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 
-import { useAppSelector } from "@/redux/hooks"
+import { useAppSelector } from "@/reducks/hooks"
 
 import { careerItemType } from "@/types/data.type"
 

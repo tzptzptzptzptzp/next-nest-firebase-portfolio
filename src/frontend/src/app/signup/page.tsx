@@ -16,7 +16,7 @@ import { userSignUp } from '@/utils/authentication'
 import { signUpType, UserSchema } from '@/schema/user'
 
 import 'react-toastify/dist/ReactToastify.css'
-import { useAppSelector } from '@/redux/hooks'
+import { useAppSelector } from '@/reducks/hooks'
 import Link from 'next/link'
 
 export default function SignUp() {
