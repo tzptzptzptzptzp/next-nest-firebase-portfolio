@@ -28,7 +28,7 @@ export const Content = ({ data, content }: { data: contentType, content: pageCon
         <div className='flex flex-col gap-16 p-16 color-bg'>
           {content.gitHubStatus && (<GitHubStatus />)}
           {content.favorite && (<Favorite data={data.favoriteData} loading={loading} />)}
-          {content.enhancing && (<Enhancing data={data.enhancingData} />)}
+          {content.enhancing && (<Enhancing data={data.enhancingData} loading={loading} />)}
           {content.aboutMe && (<AboutMe data={data.aboutMeData} loading={loading} />)}
           {content.skill && (<Skill data={data.skillData} loading={loading} />)}
           {content.project && (<Project data={data.projectData} loading={loading} />)}
