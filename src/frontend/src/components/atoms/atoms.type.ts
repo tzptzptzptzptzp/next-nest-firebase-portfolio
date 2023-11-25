@@ -4,6 +4,19 @@ export type FullScreenContainerType = {
   width?: string;
 };
 
+export type ImageType = {
+  alt?: string;
+  className?: string;
+  fill?: boolean;
+  height?: number;
+  priority?: boolean;
+  quality?: number;
+  skeleton?: boolean;
+  src: string;
+  unoptimized?: boolean;
+  width?: number;
+};
+
 export type InputAttributeType =
   | "text"
   | "checkbox"
