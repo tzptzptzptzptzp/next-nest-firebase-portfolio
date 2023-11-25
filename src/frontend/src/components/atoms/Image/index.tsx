@@ -22,7 +22,7 @@ export const Image = ({
     <>
       <NextImage
         alt={alt}
-        className={className}
+        className={`${className} ${isLoading ? '!h-0' : ''}`}
         fill={fill}
         height={!fill ? height : undefined}
         onLoad={() => { setIsLoading(false) }}
