@@ -11,6 +11,8 @@ type Props = {
 }
 
 export const SnsLinks = ({ data, loading = false }: Props) => {
+  console.log(data);
+
   return (
     <div className="flex-center gap-4 text-[1.8rem]">
       <Skeleton circle isLoading={loading} width={20} height={20}>
@@ -24,7 +26,7 @@ export const SnsLinks = ({ data, loading = false }: Props) => {
         </a>
       </Skeleton>
       <Skeleton circle isLoading={loading} width={20} height={20}>
-        <a href={`https://github.com/${data.sns.instagram}`}>
+        <a href={`https://github.com/${data.sns.github}`}>
           <FontAwesomeIcon icon={faGithub} width={'1em'} />
         </a>
       </Skeleton>
